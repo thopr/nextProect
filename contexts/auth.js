@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import Cookies from "js-cookie";
 import Router, { useRouter } from "next/router";
+import Axios from "axios";
 
 //api here is an axios instance
 import api from "../services/Api";
@@ -74,39 +75,66 @@ export const AuthProvider = ({ children }) => {
 
     if (data) {
       console.log(data);
-
-      console.log("Got new token" + data.token);
-      Cookies.set("token", data.token, { expires: 60 });
-      Cookies.set("user_nicename", data.user_nicename, { expires: 60 });
-      Cookies.set("user_email", data.user_email, { expires: 60 });
-      Cookies.set("UserType", data.UserType, { expires: 60 });
-      Cookies.set("BracnhCode", data.BracnhCode, { expires: 60 });
-      Cookies.set("CompanyCode", data.CompanyCode, { expires: 60 });
-      Cookies.set("profile_pic", data.profile_pic, { expires: 60 });
-      Cookies.set("first_name", data.first_name, { expires: 60 });
-      Cookies.set("last_name", data.last_name, { expires: 60 });
-
-      api.defaults.headers.Authorization = `Bearer ${data.token}`;
-
-      setUser({
-        user_nicename: data.user_nicename,
-        user_email: data.user_email,
-        UserType: data.UserType,
-        CompanyCode: data.CompanyCode,
-        BracnhCode: data.BracnhCode,
-        profile_pic: data.profile_pic,
-        first_name: data.first_name,
-        last_name: data.last_name,
+      const api2 = Axios.create({
+        baseURL: "https://167.99.246.8/wp-json/",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
       });
-      console.log("Got user", user);
-      if (data.UserType == "Company") {
-        Router.push("/CompanyStatistics");
-        //return "Company";
-      } else if (data.UserType == "mandobe") {
-        // return "Company";
-        Router.push("/MyUsers");
-      }
-      return true;
+      let userData = {
+        username: data.email,
+        password: data.qq,
+      };
+
+      api2
+        .post("jwt-auth/v1/token", userData)
+        .then((res) => {
+          let udata = res.data;
+
+          console.log(udata);
+
+          console.log("Got new token" + udata.token);
+          Cookies.set("token", udata.token, { expires: 60 });
+          Cookies.set("user_nicename", udata.user_nicename, { expires: 60 });
+          Cookies.set("user_email", udata.user_email, { expires: 60 });
+          Cookies.set("UserType", udata.UserType, { expires: 60 });
+          Cookies.set("BracnhCode", udata.BracnhCode, { expires: 60 });
+          Cookies.set("CompanyCode", udata.CompanyCode, { expires: 60 });
+          Cookies.set("profile_pic", udata.profile_pic, { expires: 60 });
+          Cookies.set("first_name", udata.first_name, { expires: 60 });
+          Cookies.set("last_name", udata.last_name, { expires: 60 });
+
+          api.defaults.headers.Authorization = `Bearer ${udata.token}`;
+
+          setUser({
+            user_nicename: udata.user_nicename,
+            user_email: udata.user_email,
+            UserType: udata.UserType,
+            CompanyCode: udata.CompanyCode,
+            BracnhCode: udata.BracnhCode,
+            profile_pic: udata.profile_pic,
+            first_name: udata.first_name,
+            last_name: udata.last_name,
+          });
+          console.log("Got user", user);
+          if (udata.UserType == "Company") {
+            Router.push("/CompanyStatistics");
+            //return "Company";
+          } else if (udata.UserType == "mandobe") {
+            // return "Company";
+            Router.push("/MyUsers");
+          }
+          return true;
+        })
+        .catch((err) => {
+          alert.show("حصل خطأ", {
+            timeout: 2000,
+            type: "error",
+          });
+
+          console.log(err);
+        });
     } else {
       return false;
     }

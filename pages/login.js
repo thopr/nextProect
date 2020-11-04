@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react"; //
 import useAuth, { ProtectRoute } from "../contexts/auth.js";
 import ReactCodeInput from "react-verification-code-input";
 import LoadingOverlay from "react-loading-overlay";
-import Axios from "axios";
 
 function login() {
   const { login, Sendcond, phoneLogin } = useAuth();
@@ -38,33 +37,7 @@ function login() {
   };
 
   const loguser = async () => {
-    const api2 = Axios.create({
-      baseURL: "https://167.99.246.8/wp-json/",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    });
-    let data = {
-      username: "Rabwa9pLlZLRjZqzaWkI@rabwaMail.com",
-      password: "VKqkqUpitOTa",
-    };
-
-    api2
-      .post("jwt-auth/v1/token", data)
-      .then((res) => {
-        setspinner(false);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        alert.show("حصل خطأ", {
-          timeout: 2000,
-          type: "error",
-        });
-
-        console.log(err);
-      });
-    /*setspinner(true);
+    setspinner(true);
     console.log("" + code);
     const res = await phoneLogin(phone, code);
 
@@ -73,7 +46,7 @@ function login() {
       //Router.push("/CompanyStatistics");
     } else {
       setspinner(false);
-    }*/
+    }
   };
 
   return (

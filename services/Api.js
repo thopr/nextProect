@@ -8,8 +8,7 @@ if (!siteUrl) {
   });
 }
 let urls = {
-  development:
-    "http://localhost/new_rabwa_project/rabwa-coubon/wordpress/wp-json/",
+  development: "https://167.99.246.8/wp-json/",
   production: "https://167.99.246.8/wp-json/",
 };
 const api = Axios.create({
