@@ -6,7 +6,7 @@ import Admin_nav from "../components/Admin_nav";
 import HeaderNav from "../components/HeaderNav";
 import Footer from "../components/Footer";
 import EditableImage from "../Components/editable-image/EditableImage";
-import ButtonUploadImage from "../Components/buttonupload/ButtonUpload";
+import ButtonUploadImage from "../Components/buttonupload";
 import api from "../services/Api";
 import Cookies from "js-cookie";
 import axios from "axios";
