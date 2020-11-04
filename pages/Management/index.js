@@ -45,7 +45,7 @@ function Admin() {
               viewBox="0 0 2560 100"
               preserveAspectRatio="none"
               version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="https://www.w3.org/2000/svg"
             >
               <polygon
                 class="fill-default"
