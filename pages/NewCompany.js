@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 import Admin_nav from "../components/Admin_nav";
 import HeaderNav from "../components/HeaderNav";
 import Footer from "../components/Footer";
-import EditableImage from "../Components/EditableImage";
-import ButtonUploadImage from "../Components/ButtonUpload";
+//import EditableImage from "../Components/EditableImage";
+//import ButtonUploadImage from "../Components/ButtonUpload";
 import api from "../services/Api";
 import Cookies from "js-cookie";
 import axios from "axios";
@@ -88,23 +88,9 @@ function NewCompany() {
                     <div className="pl-lg-4">
                       <div className="row">
                         <div className="col-lg-6">
-                          <div style={{ width: "140px", margin: "2em auto" }}>
-                            {ProductImage ? (
-                              <EditableImage
-                                imageObject={ProductImage}
-                                removeImageFunc={() => setProductImage(false)}
-                              />
-                            ) : (
-                              <ButtonUploadImage
-                                typeImage="thumbnail"
-                                onChange={(thumbnail) =>
-                                  handleThumbnailProduct(
-                                    thumbnail.target.files[0]
-                                  )
-                                }
-                              />
-                            )}
-                          </div>
+                          <div
+                            style={{ width: "140px", margin: "2em auto" }}
+                          ></div>
                         </div>
                       </div>
                     </div>
