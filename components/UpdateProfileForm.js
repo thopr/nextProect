@@ -7,8 +7,8 @@ import api from "../services/Api";
 import Footer from "../components/Footer";
 import useAuth, { ProtectRoute } from "../contexts/auth.js";
 import { useAlert } from "react-alert";
-//import EditableImage2 from "./editable-image/EditableImage2";
-//import ButtonUploadImage from "./button-upload/ButtonUpload";
+import EditableImage2 from "./EditableImage2";
+import ButtonUploadImage from "./ButtonUpload";
 import Cookies from "js-cookie";
 
 import axios from "axios";
@@ -172,7 +172,23 @@ function UpdateProfileForm() {
                               <div
                                 style={{ width: "140px", margin: "2em auto" }}
                               >
-                                {profile_pic ? "" : ""}
+                                {profile_pic ? (
+                                  <EditableImage2
+                                    imageObject={profile_pic}
+                                    removeImageFunc={() =>
+                                      setprofile_pic(false)
+                                    }
+                                  />
+                                ) : (
+                                  <ButtonUploadImage
+                                    typeImage="thumbnail"
+                                    onChange={(thumbnail) =>
+                                      handleThumbnailProduct(
+                                        thumbnail.target.files[0]
+                                      )
+                                    }
+                                  />
+                                )}
                               </div>
                             </div>
                           </div>
