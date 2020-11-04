@@ -1,0 +1,38 @@
+{
+  "name": "@bit/nexxtway.react-rainbow.accordion",
+  "version": "1.10.0",
+  "homepage": "https://bit.dev/nexxtway/react-rainbow/accordion",
+  "main": "dist/components/Accordion/index.js",
+  "componentId": {
+    "scope": "nexxtway.react-rainbow",
+    "name": "accordion",
+    "version": "1.10.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "@bit/nexxtway.react-rainbow.types": "1.10.0",
+    "@bit/nexxtway.react-rainbow.libs.constants": "1.10.0",
+    "@bit/nexxtway.react-rainbow.accordion-section": "1.10.0"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "bit": {
+    "env": {
+      "compiler": "bit.envs/compilers/react@1.0.5"
+    },
+    "overrides": {
+      "dependencies": {
+        "react": "-",
+        "react-dom": "-"
+      },
+      "peerDependencies": {
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6"
+      }
+    }
+  }
+}
