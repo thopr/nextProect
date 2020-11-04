@@ -4,9 +4,9 @@ import api from "../services/Api";
 import { GetCCAs } from "../services/api_get";
 import Skeleton from "react-loading-skeleton";
 import { useAlert } from "react-alert";
-//import EditableImage from "./editable-image/EditableImage";
-//import EditableImage_banner from "./editable-image/EditableImage_banner";
-//import ButtonUploadImage from "./button-upload/ButtonUpload";
+import EditableImage from "./EditableImage";
+import EditableImage_banner from "./EditableImage_banner";
+import ButtonUploadImage from "./ButtonUpload";
 import axios from "axios";
 
 import { useRouter } from "next/router";
@@ -270,13 +270,39 @@ function NewCompanyForm({ changenewCompany }) {
                 <label class="form-control-label"> لوغو الشركة</label>
 
                 <div style={{ width: "140px", margin: "2em auto" }}>
-                  {ProductImage ? "" : ""}
+                  {ProductImage ? (
+                    <EditableImage
+                      imageObject={ProductImage}
+                      removeImageFunc={() => setProductImage(false)}
+                    />
+                  ) : (
+                    <ButtonUploadImage
+                      typeImage="thumbnail"
+                      onChange={(thumbnail) =>
+                        handleThumbnailProduct(thumbnail.target.files[0])
+                      }
+                    />
+                  )}
                 </div>
               </div>
               <div className="col-lg-12">
                 <label class="form-control-label"> بانر الشركة</label>
 
-                <div>{banner ? "" : ""}</div>
+                <div>
+                  {banner ? (
+                    <EditableImage_banner
+                      imageObject={banner}
+                      removeImageFunc={() => setbanner(false)}
+                    />
+                  ) : (
+                    <ButtonUploadImage
+                      typeImage="thumbnail"
+                      onChange={(thumbnail) =>
+                        handlebanner(thumbnail.target.files[0])
+                      }
+                    />
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -465,7 +491,12 @@ function NewCompanyForm({ changenewCompany }) {
                   ""
                 )}
                 <br />
-                ""
+                <ButtonUploadImage
+                  typeImage="thumbnail"
+                  onChange={(thumbnail) =>
+                    handleThumbnailProduct2(thumbnail.target.files[0])
+                  }
+                />
                 <hr />
               </div>
               <div class="col-xl-12 col-md-12" style={{ height: "50px" }}></div>

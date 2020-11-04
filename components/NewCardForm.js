@@ -4,8 +4,8 @@ import api from "../services/Api";
 import { GetCategories } from "../services/api_get";
 import Skeleton from "react-loading-skeleton";
 import { useAlert } from "react-alert";
-//import EditableImage2 from "./editable-image/EditableImage2";
-//import ButtonUploadImage from "./button-upload/ButtonUpload";
+import EditableImage2 from "./EditableImage2";
+import ButtonUploadImage from "./ButtonUpload";
 import Cookies from "js-cookie";
 
 import axios from "axios";
@@ -144,7 +144,19 @@ function NewCardForm({ user_id, username, GoBackAndTriggerMutation }) {
                 البطاقة
               </label>
               <div style={{ width: "140px", margin: "2em auto" }}>
-                {ProductImage ? "" : ""}
+                {ProductImage ? (
+                  <EditableImage2
+                    imageObject={ProductImage}
+                    removeImageFunc={() => setProductImage(false)}
+                  />
+                ) : (
+                  <ButtonUploadImage
+                    typeImage="thumbnail"
+                    onChange={(thumbnail) =>
+                      handleThumbnailProduct(thumbnail.target.files[0])
+                    }
+                  />
+                )}
               </div>
             </div>
           </div>
