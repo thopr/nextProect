@@ -8,7 +8,7 @@ import Cookies from "js-cookie";
 
 import { useRouter } from "next/router";
 import useAuth, { ProtectRoute } from "../contexts/auth.js";
-import ButtonUploadImage from "./button-upload/ButtonUpload";
+//import ButtonUploadImage from "./button-upload/ButtonUpload";
 import axios from "axios";
 
 function NewBranchForm({
@@ -299,12 +299,7 @@ function NewBranchForm({
                 ""
               )}
               <br />
-              <ButtonUploadImage
-                typeImage="thumbnail"
-                onChange={(thumbnail) =>
-                  handleThumbnailProduct(thumbnail.target.files[0])
-                }
-              />
+              ""
               <hr />
             </div>
             <div class="col-xl-12 col-md-12" style={{ height: "50px" }}></div>
