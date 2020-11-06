@@ -3,13 +3,13 @@ import Cookies from "js-cookie";
 
 const siteUrl = Cookies.get("siteUrl");
 if (!siteUrl) {
-  Cookies.set("siteUrl", "https://167.99.246.8/wp-json/", {
+  Cookies.set("siteUrl", "https://api.rabowah.com/wp-json/", {
     expires: 60,
   });
 }
 let urls = {
-  development: "https://167.99.246.8/wp-json/",
-  production: "https://167.99.246.8/wp-json/",
+  development: "https://api.rabowah.com/wp-json/",
+  production: "https://api.rabowah.com/wp-json/",
 };
 const api = Axios.create({
   baseURL: urls[process.env.NODE_ENV],
