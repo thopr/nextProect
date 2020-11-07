@@ -8,6 +8,7 @@ import EditableImage from "./EditableImage";
 import EditableImage_banner from "./EditableImage_banner";
 import ButtonUploadImage from "./ButtonUpload";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 import { useRouter } from "next/router";
 import useAuth, { ProtectRoute } from "../contexts/auth.js";
