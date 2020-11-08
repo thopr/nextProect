@@ -17,6 +17,7 @@ function Register_User() {
 
   const { toggler, settoggler, loading } = useAuth();
   const [spinner, setspinner] = useState(false);
+  const [address, setaddress] = useState("");
 
   const { data, isLoading, isError } = GetFullCCAs();
 
@@ -160,6 +161,7 @@ function Register_User() {
       categories: list,
       des,
       mandobe: true,
+      address,
     };
 
     console.log(data);
@@ -200,6 +202,14 @@ function Register_User() {
     if (FirstName == "") {
       checke = false;
       alert.show("الرجاء كتابة الإسم الأول", {
+        timeout: 2000,
+        type: "error",
+      });
+    }
+
+    if (address == "") {
+      checke = false;
+      alert.show("الرجاء كتابة عنوان المستفيد", {
         timeout: 2000,
         type: "error",
       });
@@ -480,7 +490,7 @@ function Register_User() {
                             </div>
                           </div>
 
-                          <div className="col-lg-12">
+                          <div className="col-lg-6">
                             <div className="form-group">
                               <label className="form-control-label">
                                 رقم الجوال
@@ -518,6 +528,23 @@ function Register_User() {
                                   </div>
                                 )}{" "}
                               </div>
+                            </div>
+                          </div>
+                          <div className="col-lg-6">
+                            <div className="form-group">
+                              <label className="form-control-label">
+                                العنوان
+                              </label>
+                              <input
+                                type="text"
+                                name="address"
+                                onChange={(e) => {
+                                  setaddress(e.target.value);
+                                }}
+                                value={address}
+                                className="form-control"
+                                placeholder="عنوان المستفيد"
+                              />
                             </div>
                           </div>
 
