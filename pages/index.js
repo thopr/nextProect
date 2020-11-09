@@ -89,7 +89,6 @@ function Home() {
             <div className="row align-items-center h-100">
               <div className="col-lg-6 wow fadeInUp text-right">
                 <div className="badge badge-soft mb-2">
-                  #1 Finances App on 2020
                 </div>
                 <h1 className="mb-4 fw-normal">تبرع بشكل مختلف</h1>
                 <p className="mb-4">
