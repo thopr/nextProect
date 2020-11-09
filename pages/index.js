@@ -73,7 +73,7 @@ function Home() {
               </li>
             </ul>
             <div className="ml-auto my-2 my-lg-0">
-              <button className="btn btn-primary rounded-pill">
+              <button style={{display: 'none'}} className="btn btn-primary rounded-pill">
                 Download Now
               </button>
             </div>
@@ -95,8 +95,8 @@ function Home() {
                 <p className="mb-4">
                   التبرع أصبح بشكل مختلف <br /> تبرع للمحتاجين بأنواع التبرعات.
                 </p>
-                <a href="#" className="btn btn-dark">
-                  سجل الان
+                <a href="#" download className="btn btn-dark">
+                  حمل الان
                 </a>
               </div>
               <div className="col-lg-6 d-none d-lg-block wow zoomIn">
@@ -555,7 +555,7 @@ function Home() {
                 </div>
               </div>
               <div className="col-md-12 col-lg-12 my-3 wow fadeInUp">
-                <div className="card-page" style={{ textAlign: "right" }}>
+                <div className="card-page" style={{ textAlign: "right",display: "none" }}>
                   <h3 className="fw-normal">تواصل معنا</h3>
                   <form method="POST" className="mt-3">
                     <div className="form-group">
