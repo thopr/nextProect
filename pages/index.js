@@ -90,9 +90,9 @@ function Home() {
               <div className="col-lg-6 wow fadeInUp text-right">
                 <div className="badge badge-soft mb-2">
                 </div>
-                <h1 className="mb-4 fw-normal">تبرع بشكل مختلف</h1>
+                <h1 className="mb-4 fw-normal">من نحن</h1>
                 <p className="mb-4">
-                  التبرع أصبح بشكل مختلف <br /> تبرع للمحتاجين بأنواع التبرعات.
+                مؤسسة حكماء المستقبل للاتصالات وتقنية المعلومات متخصصون في التسويق التجاري والخيري من خلال الوسائل التقنية، وقمنا بإنشاء هذا العمل الوقفي انطلاقاً من مسئوليتنا أمام الدين ثم الوطن ثم المجتمع، وراعينا فيه سياسة تجسير الأدوار وابتعدنا تماماً عن مهمة جمع التبرعات بأي شكل من أشكالها، فنحن فقط منصة إعلان وتنسيق وتسويق خيري نجمع بين أصحاب الحاجات مواطنون أو مقيمون بنظام رسمي داخل الدولة وبين الجمعيات المسجلون رسمياً في الوزارة وبين الشركات الداعمة المصرح لها رسمياً بمزاولة التجارة بأنواعها.
                 </p>
                 <a href="#" download className="btn btn-dark">
                   حمل الان
@@ -113,34 +113,51 @@ function Home() {
           <div className="row justify-content-center mt-5">
             <div className="col-lg-10">
               <div className="row justify-content-center">
-                <div className="col-md-6 col-lg-4 py-3 wow fadeInLeft">
+                <div className="col-md-6 col-lg-3 py-3 wow fadeInLeft">
                   <div className="card card-body border-0 text-center shadow pt-5">
                     <div className="svg-icon mx-auto mb-4">
-                      <img src="../assets/img/icons/payment.png" alt="" />
+                    <i class="fas fa-shield-alt color-iconn"></i>
+
+
                     </div>
-                    <h5 className="fg-gray">دفع امن</h5>
-                    <p className="fs-small">الدفع يتم بطريقة سهلة وامنة</p>
+                    <h5 className="fg-gray">الخصوصية</h5>
+                    <p className="fs-small"> الخصوصية الكاملة لأصحاب الحسابات سواء كان مستفيداً أو جمعية أو شركة.</p>
                   </div>
                 </div>
-                <div className="col-md-6 col-lg-4 py-3 wow fadeInUp">
+                <div className="col-md-6 col-lg-3 py-3 wow fadeInUp">
                   <div className="card card-body border-0 text-center shadow pt-5">
                     <div className="svg-icon mx-auto mb-4">
-                      <img src="../assets/img/icons/customizable.png" alt="" />
+                    <i class="fas fa-print color-iconn"></i>
+
+                    
                     </div>
-                    <h5 className="fg-gray">التبرع في أكثر من مجال</h5>
+                    <h5 className="fg-gray">تقارير</h5>
                     <p className="fs-small">
-                      التبرع في أكثر من مجال منها الغذائي والصحي ... الخ
+                    تقارير تفصيلية بجميع العمليات التي تتم.
                     </p>
                   </div>
                 </div>
-                <div className="col-md-6 col-lg-4 py-3 wow fadeInRight">
+                <div className="col-md-6 col-lg-3 py-3 wow fadeInRight">
                   <div className="card card-body border-0 text-center shadow pt-5">
                     <div className="svg-icon mx-auto mb-4">
-                      <img src="../assets/img/icons/concept.png" alt="" />
+                    <i class="fas fa-bullseye color-iconn"></i>
                     </div>
-                    <h5 className="fg-gray">طريقة عصرية</h5>
+                    <h5 className="fg-gray">المرونة</h5>
                     <p className="fs-small">
-                      طريقة عصرية للتبرع ولصرف التبرعات
+                    المرونة العالية في اختيار الخدمات والخصائص.
+                    </p>
+                  </div>
+                </div>
+
+
+                <div className="col-md-6 col-lg-3 py-3 wow fadeInRight">
+                  <div className="card card-body border-0 text-center shadow pt-5">
+                    <div className="svg-icon mx-auto mb-4">
+                    <i class="fas fa-eye color-iconn"></i>
+                    </div>
+                    <h5 className="fg-gray">الشفافية</h5>
+                    <p className="fs-small">
+                    الشفافية الكاملة حيث أن موقع ربوة ليست له أي حساب بنكي ولا يتلقى أي تبرعات من أي نوع كان.
                     </p>
                   </div>
                 </div>
@@ -171,7 +188,48 @@ function Home() {
           </div>
         </div>
       </div>
+
       <div className="page-section">
+        <div className="container">
+          <div className="row"  style={{textAlign:'right !important'}}>
+          <div className="col-lg-6 py-3" dir="rtl" style={{textAlign:'right'}}>
+              <h3  style={{textAlign:'right'}}>نقاط القوة:</h3>
+              <ul  style={{textAlign:'right',listStyle:'none'}}>
+                <li>1. حاجة العمل الخيري إلى منصة تنسيق بين أطرافه الأربعة (الجهات الإشرافية والجمعيات الخيرية والداعمين والمستفيدين).</li>
+                <li>2. إتاحة فرصة المشاركة في العمل للخيري لجميع الشركات باختلاف مستوياتها المادية.</li>
+                <li>3. الوصول إلى قواعد بيانات أكثر دقة وشمولية وتفصيل.</li>
+                <li>4. إمكانية استثمار البيانات الموجودة في بناء خطط عمل ومشاريع تطوير على مستوى المنطقة.</li>
+              </ul>
+
+          </div>
+
+          <div className="col-lg-6 py-3" dir="rtl"  style={{textAlign:'right'}}>
+              <h3  style={{textAlign:'right'}}>أهدافنا:</h3>
+              <ul  style={{textAlign:'right',listStyle:'none'}}>
+                <li>1. تحقيق التكامل بين أصحاب المصلحة والجمعيات وبين المتبرعين والمستفيدين.</li>
+                <li>2. إيجاد بيئة تنافسية في عمل الخير تحتضن الجميع باختلاف وظائفهم ومستوياتهم.</li>
+                <li>3. خدمة المستفيدين بأسلوب يجمع بين الجودة والخصوصية.</li>
+                <li>4. المساهمة في تحسين جودة الحياة لجميع أفراد المجتمع بكافة مستوياتهم المعيشية.</li>
+              </ul>
+
+          </div>
+<div className="col-lg-12 py-3"><hr /> </div>
+          <div className="col-lg-12 py-3" dir="rtl"  style={{textAlign:'right'}}>
+              <h3  style={{textAlign:'right'}}>أسلوب العمل:</h3>
+              <ul  style={{textAlign:'right',listStyle:'none'}}>
+                <li>1. منصة تفاعلية تجمع بين السهولة والسرعة في تقديم الخدمات.</li>
+                <li>2. تنسيق بين الشركات التي ترغب في الدعم وبين الجمعيات التي لديها مستفيدين.</li>
+                <li>3. لا يتم استقبال التبرعات من أي نوع كان مادي أو عيني.</li>
+                <li>4. جميع قواعد بيانات تخضع للأنظمة الرسمية.</li>
+              </ul>
+
+          </div>
+
+          </div>
+          </div>
+          </div>
+
+      <div className="page-section" style={{display: "none" }}>
         <div className="container">
           <div className="row">
             <div className="col-lg-4 py-3">

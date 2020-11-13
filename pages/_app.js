@@ -35,12 +35,15 @@ function MyApp({ Component, pageProps }) {
    });*/
   return (
     <>
+
+
       <link rel="stylesheet" type="text/css" href="/assets/css/argon.css" />
       <link
         rel="stylesheet"
         type="text/css"
         href="/assets/vendor/nucleo/css/nucleo.css"
       />
+     
       <link
         rel="stylesheet"
         type="text/css"
@@ -61,7 +64,7 @@ function MyApp({ Component, pageProps }) {
       <script src="/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
       <script src="/assets/js/argon.js?v=1.2.0"></script>
-
+      <script src="/assets/fontawesome-all.js"></script>
       <AuthProvider>
         {/*
 

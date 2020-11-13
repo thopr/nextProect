@@ -64,6 +64,13 @@
   box-sizing: border-box;
 }
 
+
+
+.color-iconn{
+  font-size:30px !important;
+  color:purple;
+}
+   
 html {
   font-family: sans-serif;
   line-height: 1.15;
