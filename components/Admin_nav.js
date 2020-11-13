@@ -46,7 +46,7 @@ function Admin_nav() {
             {/* Nav items */}
             {Cookies.get("UserType") == "admin" ? (
               <>
-                <ul className="navbar-nav">
+                <ul className="navbar-nav" style={{ textAlign: "right" }}>
                   <img
                     onClick={() => {
                       logout();
@@ -214,22 +214,22 @@ function Admin_nav() {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link href="/registerUsersXml">
+                    <Link href="/CCA">
                       <a
                         className={
-                          router.pathname == "/registerUsersXml"
+                          router.pathname == "/CCA"
                             ? "nav-link active"
                             : "nav-link "
                         }
                         style={
-                          router.pathname == "/registerUsersXml"
+                          router.pathname == "/CCA"
                             ? { backgroundColor: "#c7e4ae" }
                             : {}
                         }
                       >
                         <i className="ni ni-circle-08 " />
                         <span className="nav-link-text">
-                          تسجيل مجموعة مستفيدين
+                          الدول والمدن والمناطق
                         </span>
                       </a>
                     </Link>
