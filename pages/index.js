@@ -90,9 +90,9 @@ function Home() {
               <div className="col-lg-6 wow fadeInUp text-right">
                 <div className="badge badge-soft mb-2">
                 </div>
-                <h1 className="mb-4 fw-normal">تبرع بشكل مختلف</h1>
+                <h1 className="mb-4 fw-normal">من نحن</h1>
                 <p className="mb-4">
-                  التبرع أصبح بشكل مختلف <br /> تبرع للمحتاجين بأنواع التبرعات.
+                مؤسسة حكماء المستقبل للاتصالات وتقنية المعلومات متخصصون في التسويق التجاري والخيري من خلال الوسائل التقنية، وقمنا بإنشاء هذا العمل الوقفي انطلاقاً من مسئوليتنا أمام الدين ثم الوطن ثم المجتمع، وراعينا فيه سياسة تجسير الأدوار وابتعدنا تماماً عن مهمة جمع التبرعات بأي شكل من أشكالها، فنحن فقط منصة إعلان وتنسيق وتسويق خيري نجمع بين أصحاب الحاجات مواطنون أو مقيمون بنظام رسمي داخل الدولة وبين الجمعيات المسجلون رسمياً في الوزارة وبين الشركات الداعمة المصرح لها رسمياً بمزاولة التجارة بأنواعها.
                 </p>
                 <a href="#" download className="btn btn-dark">
                   حمل الان
@@ -113,34 +113,51 @@ function Home() {
           <div className="row justify-content-center mt-5">
             <div className="col-lg-10">
               <div className="row justify-content-center">
-                <div className="col-md-6 col-lg-4 py-3 wow fadeInLeft">
+                <div className="col-md-6 col-lg-3 py-3 wow fadeInLeft">
                   <div className="card card-body border-0 text-center shadow pt-5">
                     <div className="svg-icon mx-auto mb-4">
-                      <img src="../assets/img/icons/payment.png" alt="" />
+                    <i class="fas fa-shield-alt color-iconn"></i>
+
+
                     </div>
-                    <h5 className="fg-gray">دفع امن</h5>
-                    <p className="fs-small">الدفع يتم بطريقة سهلة وامنة</p>
+                    <h5 className="fg-gray">الخصوصية</h5>
+                    <p className="fs-small"> الخصوصية الكاملة لأصحاب الحسابات سواء كان مستفيداً أو جمعية أو شركة.</p>
                   </div>
                 </div>
-                <div className="col-md-6 col-lg-4 py-3 wow fadeInUp">
+                <div className="col-md-6 col-lg-3 py-3 wow fadeInUp">
                   <div className="card card-body border-0 text-center shadow pt-5">
                     <div className="svg-icon mx-auto mb-4">
-                      <img src="../assets/img/icons/customizable.png" alt="" />
+                    <i class="fas fa-print color-iconn"></i>
+
+                    
                     </div>
-                    <h5 className="fg-gray">التبرع في أكثر من مجال</h5>
+                    <h5 className="fg-gray">تقارير</h5>
                     <p className="fs-small">
-                      التبرع في أكثر من مجال منها الغذائي والصحي ... الخ
+                    تقارير تفصيلية بجميع العمليات التي تتم.
                     </p>
                   </div>
                 </div>
-                <div className="col-md-6 col-lg-4 py-3 wow fadeInRight">
+                <div className="col-md-6 col-lg-3 py-3 wow fadeInRight">
                   <div className="card card-body border-0 text-center shadow pt-5">
                     <div className="svg-icon mx-auto mb-4">
-                      <img src="../assets/img/icons/concept.png" alt="" />
+                    <i class="fas fa-bullseye color-iconn"></i>
                     </div>
-                    <h5 className="fg-gray">طريقة عصرية</h5>
+                    <h5 className="fg-gray">المرونة</h5>
                     <p className="fs-small">
-                      طريقة عصرية للتبرع ولصرف التبرعات
+                    المرونة العالية في اختيار الخدمات والخصائص.
+                    </p>
+                  </div>
+                </div>
+
+
+                <div className="col-md-6 col-lg-3 py-3 wow fadeInRight">
+                  <div className="card card-body border-0 text-center shadow pt-5">
+                    <div className="svg-icon mx-auto mb-4">
+                    <i class="fas fa-eye color-iconn"></i>
+                    </div>
+                    <h5 className="fg-gray">الشفافية</h5>
+                    <p className="fs-small">
+                    الشفافية الكاملة حيث أن موقع ربوة ليست له أي حساب بنكي ولا يتلقى أي تبرعات من أي نوع كان.
                     </p>
                   </div>
                 </div>
@@ -171,7 +188,48 @@ function Home() {
           </div>
         </div>
       </div>
+
       <div className="page-section">
+        <div className="container">
+          <div className="row"  style={{textAlign:'right !important'}}>
+          <div className="col-lg-6 py-3" dir="rtl" style={{textAlign:'right'}}>
+              <h3  style={{textAlign:'right'}}>نقاط القوة:</h3>
+              <ul  style={{textAlign:'right',listStyle:'none'}}>
+                <li>1. حاجة العمل الخيري إلى منصة تنسيق بين أطرافه الأربعة (الجهات الإشرافية والجمعيات الخيرية والداعمين والمستفيدين).</li>
+                <li>2. إتاحة فرصة المشاركة في العمل للخيري لجميع الشركات باختلاف مستوياتها المادية.</li>
+                <li>3. الوصول إلى قواعد بيانات أكثر دقة وشمولية وتفصيل.</li>
+                <li>4. إمكانية استثمار البيانات الموجودة في بناء خطط عمل ومشاريع تطوير على مستوى المنطقة.</li>
+              </ul>
+
+          </div>
+
+          <div className="col-lg-6 py-3" dir="rtl"  style={{textAlign:'right'}}>
+              <h3  style={{textAlign:'right'}}>أهدافنا:</h3>
+              <ul  style={{textAlign:'right',listStyle:'none'}}>
+                <li>1. تحقيق التكامل بين أصحاب المصلحة والجمعيات وبين المتبرعين والمستفيدين.</li>
+                <li>2. إيجاد بيئة تنافسية في عمل الخير تحتضن الجميع باختلاف وظائفهم ومستوياتهم.</li>
+                <li>3. خدمة المستفيدين بأسلوب يجمع بين الجودة والخصوصية.</li>
+                <li>4. المساهمة في تحسين جودة الحياة لجميع أفراد المجتمع بكافة مستوياتهم المعيشية.</li>
+              </ul>
+
+          </div>
+<div className="col-lg-12 py-3"><hr /> </div>
+          <div className="col-lg-12 py-3" dir="rtl"  style={{textAlign:'right'}}>
+              <h3  style={{textAlign:'right'}}>أسلوب العمل:</h3>
+              <ul  style={{textAlign:'right',listStyle:'none'}}>
+                <li>1. منصة تفاعلية تجمع بين السهولة والسرعة في تقديم الخدمات.</li>
+                <li>2. تنسيق بين الشركات التي ترغب في الدعم وبين الجمعيات التي لديها مستفيدين.</li>
+                <li>3. لا يتم استقبال التبرعات من أي نوع كان مادي أو عيني.</li>
+                <li>4. جميع قواعد بيانات تخضع للأنظمة الرسمية.</li>
+              </ul>
+
+          </div>
+
+          </div>
+          </div>
+          </div>
+
+      <div className="page-section" style={{display: "none" }}>
         <div className="container">
           <div className="row">
             <div className="col-lg-4 py-3">
@@ -362,7 +420,7 @@ function Home() {
                       aria-expanded="false"
                       aria-controls="collapse1"
                     >
-                      طرق التبرع
+                     1. هل (منصة ربوة) جمعية خيرية؟
                     </button>
                   </div>
                   <div
@@ -372,20 +430,196 @@ function Home() {
                     data-parent="#accordionFAQ"
                   >
                     <div className="accordion-content">
-                      <p>طرق التبرع:</p>
-                      <ul>
-                        <li>Wire transfers</li>
-                        <li>Bank transfers</li>
-                        <li>Western Union</li>
-                        <li>Moneygram</li>
-                        <li>Virtual credit cards (VCC)</li>
-                        <li>Health savings account (HSA)</li>
-                        <li>Any escrow type of payment</li>
-                        <li>Prepaid cards if you use automatic payments</li>
-                      </ul>
+                      <p>1. (منصة ربوة) مشروع وقفي يتبع لمؤسسة تجارية اسمها (مؤسسة حكماء المستقبل للاتصالات وتقنية المعلومات) ومقرها المملكة العربية السعودية – جدة.</p>
+                        
                     </div>
                   </div>
                 </div>
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse2"
+                      aria-expanded="false"
+                      aria-controls="collapse2"
+                    >
+                     2. هل (منصة ربوة) تعمل على مستوى محلي أم دولي؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse2"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      2. (منصة ربوة) تقدم خدماتها بإشراف الجهات الرسمية داخل كل دولة يتم قبولها فيه.
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse3"
+                      aria-expanded="false"
+                      aria-controls="collapse3"
+                    >
+                     3. من هم المستفيدون من منصة ربوة؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse3"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      3. المستفيدون هم جميع أصحاب الحاجات بأنواعها.
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse33"
+                      aria-expanded="false"
+                      aria-controls="collapse33"
+                    >
+                     4. ما دور الشركات التجارية؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse33"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      4. يتم التنسيق مع الشركات الراغبة في دعم المحتاجين من خلال (منصة ربوة) لتقديم بطاقات خصم أو بطاقات شراء مجانية للمستفيدين.
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse4"
+                      aria-expanded="false"
+                      aria-controls="collapse4"
+                    >
+                     5. ما دور الجمعيات الخيرية؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse4"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      5. تقوم الجمعيات الخيرية بدور البحث للتحقق من صحة بيانات أصحاب الحاجات المسجلين في ربوة.
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingNine">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse46"
+                      aria-expanded="false"
+                      aria-controls="collapse46"
+                    >
+                      6. ماذا تستفيد الجمعيات؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse46"
+                    className="collapse"
+                    aria-labelledby="headingNine"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      6. (منصة ربوة) يوفر شريحة واسعة من الشركات التجارية الراغبة في دعم المحتاجين إما بكوبونات شرائية مجانية أو كوبونات خصم وتوفر أنواع متعددة من الخيارات والخدمات للمحتاجين المسجلين لديهم.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse45"
+                      aria-expanded="false"
+                      aria-controls="collapse45"
+                    >
+                     7. ماذا تستفيد الشركات؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse45"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      7. (منصة ربوة) يوفر للشركات فرص الوصول السريع إلى المحتاجين الفعليين ويتيح لها التبرع الآمن لهم ويسمح للشركة بتقديم المتوفر لديها من منتجات حسب إمكانيات الشركة مهما كان حجمها ومستواها، ويسهل لهم طريقة التبرع إما بالمنح الكامل أو الخصم.                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
                 <div className="accordion-item wow fadeInRight">
                   <div className="accordion-trigger" id="headingEight">
                     <button
@@ -396,7 +630,7 @@ function Home() {
                       aria-expanded="false"
                       aria-controls="collapse5"
                     >
-                      طرق صرف التبرعات
+                     8. هل تحصل الجمعيات والشركات على تقارير خاصة بهم.
                     </button>
                   </div>
                   <div
@@ -407,27 +641,17 @@ function Home() {
                   >
                     <div className="accordion-content">
                       <p>
-                        This feature is only available in the US. For the US
-                        territories, this is supported only if the debit card
-                        was issued under a US-licensed bank. If you'd like to
-                        know in advance whether your payment to or from a US
-                        territory will go through, please check with your card
-                        issuing bank.
+                      8. نعم ومن خلال لوحة تحكم خاصة يمكن للجمعية أو الشركة الحصول على تقارير تفصيلية ومشاركتها مع الجهات الرسمية للدلالة على إنجازاتهم بشكل متميز.
                       </p>
-                      <p>
-                        You can use Google Pay to send money to friends and
-                        family or to someone using their email address or phone
-                        number. Google Pay charges no fees.
-                      </p>
-                      <p>
-                        If you have a problem sending money, here is a list of
-                        likely reasons.
-                      </p>
+                     
                     </div>
                   </div>
                 </div>
+
+
+
                 <div className="accordion-item wow fadeInRight">
-                  <div className="accordion-trigger" id="headingNine">
+                  <div className="accordion-trigger" id="headingEight">
                     <button
                       className="btn collapsed"
                       type="button"
@@ -436,25 +660,450 @@ function Home() {
                       aria-expanded="false"
                       aria-controls="collapse6"
                     >
-                      كيف يتم التسجيل كمستفيد
+                     9. ما هي شروط التسجيل في المنصة؟
                     </button>
                   </div>
                   <div
                     id="collapse6"
                     className="collapse"
-                    aria-labelledby="headingNine"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                    <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><strong><span style={{fontSize: 19, fontFamily: '"Sakkal Majalla"', color: '#0033CC'}}>- شروط التسجيل للمستفيدين:</span></strong></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>1. أن يكون لدى المستفيد إثبات هوية رسمية أو إقامة سارية المفعول.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>2. أن يكون مستحقاً للمساعدة.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>&nbsp;</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><strong><span style={{fontSize: 19, fontFamily: '"Sakkal Majalla"', color: '#0033CC'}}>- شروط التسجيل للشركات:</span></strong></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>1. أن يكون لديها نظام محاسبي الكتروني من أي نوع كان، أو منصة الكترونية.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>&nbsp;</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><strong><span style={{fontSize: 19, fontFamily: '"Sakkal Majalla"', color: '#0033CC'}}>- شروط التسجيل لسفراء المنصة (أفراد) أو (جمعيات):</span></strong></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><strong><span style={{fontFamily: '"Sakkal Majalla"', color: 'green'}}>للجمعيات:</span></strong></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>1. أن تكون الجمعية مسجلة رسمياً في الوزارة بتصريح ساري المفعول.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>2. أن تكون الجمعية متخصصة في مجال العمل الإغاثي.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>&nbsp;</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><strong><span style={{fontFamily: '"Sakkal Majalla"', color: 'green'}}>للأفراد:</span></strong></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>1. أن يكون للفرد إثبات هوية رسمية أو إقامة سارية المفعول.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>2. الحصول على تفويض رسمي من جمعية خيرية مسجلة رسمياً.</span></p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse7"
+                      aria-expanded="false"
+                      aria-controls="collapse7"
+                    >
+                     10. هل تستقبل (منصة ربوة) تبرعات مادية أو عينية؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse7"
+                    className="collapse"
+                    aria-labelledby="headingEight"
                     data-parent="#accordionFAQ"
                   >
                     <div className="accordion-content">
                       <p>
-                        For the best Google Pay experience, we recommend using a
-                        debit card whenever you send or receive money from
-                        friends and family. With a debit card, sending and
-                        receiving money is usually the fastest option.
+                      10. لا تستقبل (منصة ربوة) أي تبرعات من أي نوع كان ولا تمتلك حساباً بنكياً خاص بها وإنما يقتصر دورها على تجسير الأدوار بين المحتاجين والجمعيات والشركات.
                       </p>
+                     
                     </div>
                   </div>
                 </div>
+
+
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse8"
+                      aria-expanded="false"
+                      aria-controls="collapse8"
+                    >
+                     11. ما مصير البيانات التي يتم تسجيلها سواء للمستفيد أو للجمعية أو للشركة.
+                    </button>
+                  </div>
+                  <div
+                    id="collapse8"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      11. تضمن (منصة ربوة) سرية البيانات المسجلة لجميع أنواع الحسابات
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse9"
+                      aria-expanded="false"
+                      aria-controls="collapse9"
+                    >
+                     12. هل يمكن للشركة أو الجمعية الاحتفاظ بنسخة من البيانات الخاصة بها؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse9"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      12. نعم يمكن للشركة وكذلك الجمعية الاحتفاظ بنسخة من البيانات الخاصة بها.
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse10"
+                      aria-expanded="false"
+                      aria-controls="collapse10"
+                    >
+                    13. ما هي طريقة البحث والتأكد من صحة حالة المستفيد وهل هو محتاج فعلاً أو لا؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse10"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      13. من يقوم بدور الباحث في (منصة ربوة) هم الجمعيات أو الباحثون المتطوعون من جهات رسمية وهم متمرسون على هذا العمل إضافة إلى أننا في (منصة ربوة) نوفر لهم نماذج الكترونية للتحقق والتأكد من صحة البيانات المسجلة من جهة المستفيد – المحتاج - مع تصنيف مستوى ونوع الاحتياج.
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse11"
+                      aria-expanded="false"
+                      aria-controls="collapse11"
+                    >
+                     14. ما هي طريقة التسجيل في المنصة؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse11"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                    <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><strong><span style={{fontSize: 19, fontFamily: '"Sakkal Majalla"', color: '#0033CC'}}>- للمستفيد:</span></strong></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>1. بعد قراءتك لشروط الانضمام لمنصة ربوة كمستفيد قم باختيار (إنشاء حساب جديد).</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>2. سيتم دراسة طلب انضمامك للمنصة كمستفيد من التبرعات والخصومات والرد عليك برسالة&nbsp;</span><span dir="LTR" style={{fontFamily: '"Sakkal Majalla"'}}>SMS</span><span style={{fontFamily: '"Sakkal Majalla"'}}>.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>3. سيتم دراسة حالتك من قبل الباحث المختص.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>5. في حالة قبولك سيمكنك الدخول من خلال رقم الجوال وسيتم إرسال رمز الدخول أيضاً من خلال رسالة&nbsp;</span><span dir="LTR" style={{fontFamily: '"Sakkal Majalla"'}}>SMS</span><span style={{fontFamily: '"Sakkal Majalla"'}}>.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>6. قم باختيار الخدمات التي تحتاجها.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>7. ستقوم إدارة المنصة بإيصال طلبك إلى الشركات المسجلة لديها.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>8. في حال رغبة إحدى الشركات بتلبية احتياجاتك سيتم إرسال رسالة إليك تفيدك بالاحتياجات التي تم تأمينها مع عناوين الشركة.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>9. يمكنك بعدها الذهاب إلى فروع الشركة المعتمدة لشراء طلبك بنسبة خصم أو الحصول عليه مجاناً.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>10. يجدر الإشارة إلى أن منصة ربوة تقدم خدماتها مجاناً ولا يوجد لها أي حساب بنكي لاستقبال أي نوع من التبرعات.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>&nbsp;</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>&nbsp;</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><strong><span style={{fontSize: 19, fontFamily: '"Sakkal Majalla"', color: '#0033CC'}}>- للشركات:</span></strong></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>1. بعد قراءتك لشروط الانضمام لمنصة ربوة كشريك قم باختيار إنشاء حساب جديد.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>2. سيتم التواصل معكم من قبل مندوب المنصة لاستكمال باقي الإجراءات والتنسيقات.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>3. يجدر الإشارة إلى أن منصة ربوة تقدم خدماتها مجاناً ولا يوجد لها أي حساب بنكي لاستقبال أي نوع من التبرعات.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>&nbsp;</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><strong><span style={{fontSize: 19, fontFamily: '"Sakkal Majalla"', color: '#0033CC'}}>- لسفراء المنصة (أفراد) أو (جمعيات):</span></strong></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>1. بعد قراءتك لشروط الانضمام لمنصة ربوة كسفير قم باختيار إنشاء حساب جديد.</span></p>
+  <p dir="RTL" style={{marginTop: '0cm', marginRight: '0cm', marginBottom: '0cm', marginLeft: '0cm', textAlign: 'right', lineHeight: 'normal', fontSize: 15, fontFamily: '"Calibri",sans-serif'}}><span style={{fontFamily: '"Sakkal Majalla"'}}>2. سيتم التواصل معكم من قبل مندوب المنصة لاستكمال باقي الإجراءات والتنسيقات.</span></p>
+  <p><span dir="RTL" style={{fontSize: 15, lineHeight: '107%', fontFamily: '"Sakkal Majalla"'}}>3. يجدر الإشارة إلى أن منصة ربوة تقدم خدماتها مجاناً ولا يوجد لها أي حساب بنكي لاستقبال أي نوع من التبرعات.</span></p>
+
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse12"
+                      aria-expanded="false"
+                      aria-controls="collapse12"
+                    >
+                     15. ما نوع الخدمات التي يمكن للمستفيد أن يحصل عليها؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse12"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      15. جميع أنواع الخدمات الإعاشية والصحية والسكنية وغيرها لكن ذلك يعتمد على عدد ونوع الشركات المسجلة في (منصة ربوة).
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse13"
+                      aria-expanded="false"
+                      aria-controls="collapse13"
+                    >
+                     16. متى يمكن للمستفيد الحصول على التبرع المقرر له من الشركات؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse13"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      16. بعد اعتماد المستفيد في (منصة ربوة) ستقوم إدارة المنصة بالبحث عن الشركات الراغبة في دعمه وفي حال الوصول إلى الشركة المناسبة ستصل رسالة إلى جوال المستفيد SMS تفيده بأن لديه بطاقة خصم أو بطاقة شراء مجاني مع توضيح عنوان الشركات التي تسمح لها بصرف البطاقة لديها.
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse14"
+                      aria-expanded="false"
+                      aria-controls="collapse14"
+                    >
+                     17. ما هي آلية الاستفادة من بطاقة الخصم أو بطاقة الشراء المجانية؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse14"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      17. بعد وصول الرسالة التي تفيد بتوفر البطاقة في حساب المستفيد يقوم المستفيد بالدخول على حسابه في تطبيق الجوال الخاصة بـ (منصة ربوة) ثم شاشة البطاقات وعند وصوله إلى البائع يقوم بعرضها عليه وسوف يقوم البائع بتسجيل رقم البطاقة ومنح المستفيد المشتريات بالخصم المقرر أو مجاناً (حسب نوع البطاقة).
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse15"
+                      aria-expanded="false"
+                      aria-controls="collapse15"
+                    >
+                     18. هل يلزم المستفيد أن يقوم بتحميل تطبيق (منصة ربوة) من متجر التطبيقات؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse15"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      18. هناك خياران لصرف الكوبونات، إما بعرضها من خلال تطبيق الجوال أو من خلال رقم الكوبون المرسل عبر رسائل الـ SMS إلى جوال المستفيد.
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse16"
+                      aria-expanded="false"
+                      aria-controls="collapse16"
+                    >
+                     19. ماذا لو قام المستخدم سواء كان مستفيد أو شركة أو جمعية أو سفير بتغيير رقم جواله فهل سيتمكن من الدخول بالرقم الجديد؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse16"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      19. لا بد أولاً من الدخول بالرقم القديم ثم اختيار تغيير رقم الجوال وبعد ذلك سيتم اعتماد الرقم الجديد وإلغاء السابق.
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse17"
+                      aria-expanded="false"
+                      aria-controls="collapse17"
+                    >
+                     20. هل هناك تاريخ انتهاء لصلاحية البطاقة المرسلة للمستفيد؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse17"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      20. نعم لكل بطاقة تاريخ صلاحية وسيتم إعلام المستفيد بقرب انتهاء الصلاحية قبل التاريخ بأسبوع، وفي حال انتهت صلاحية البطاقة قبل الصرف فسيتم تحويل البطاقة لمستفيد آخر.
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div className="accordion-item wow fadeInRight">
+                  <div className="accordion-trigger" id="headingEight">
+                    <button
+                      className="btn collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse18"
+                      aria-expanded="false"
+                      aria-controls="collapse18"
+                    >
+                     21. إذا كنتُ من أصحاب الحاجات ولم تسجيلي في أي جمعية فهل ممكن أستفيد من (منصة ربوة)؟
+                    </button>
+                  </div>
+                  <div
+                    id="collapse18"
+                    className="collapse"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionFAQ"
+                  >
+                    <div className="accordion-content">
+                      <p>
+                      21. نعم يمكنك ذلك من خلال التسجيل في (منصة ربوة) بعد استيفاءك للشروط الخاصة بالمستفيدين.
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
               </div>
             </div>
           </div>

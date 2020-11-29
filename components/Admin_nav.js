@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Cookies from "js-cookie";
-
+import Logo from "./logo.png";
 import useAuth, { ProtectRoute } from "../contexts/auth.js";
 
 function Admin_nav() {
@@ -47,6 +47,14 @@ function Admin_nav() {
             {Cookies.get("UserType") == "admin" ? (
               <>
                 <ul className="navbar-nav" style={{ textAlign: "right" }}>
+                  <img
+                    onClick={() => {
+                      logout();
+
+                      router.push("/Management");
+                    }}
+                    src={logo}
+                  />
                   <hr />
                   <div style={{ marginBottom: "10px" }} className="row">
                     <div className="col-4">
@@ -328,7 +336,7 @@ function Admin_nav() {
 
                       router.push("/Management");
                     }}
-                    src="https://api.rabowah.com/wp-content/uploads/2020/11/Webp.net-resizeimage.jpg"
+                    src={logo}
                   />
                   <div
                     style={{
@@ -343,7 +351,7 @@ function Admin_nav() {
               </>
             ) : Cookies.get("UserType") == "Company" ? (
               <ul className="navbar-nav">
-                <img src="https://api.rabowah.com/wp-content/uploads/2020/11/Webp.net-resizeimage.jpg" />
+                <img src={logo} />
                 <hr />
                 <div style={{ marginBottom: "10px" }} className="row">
                   <div className="col-4">
@@ -467,7 +475,7 @@ function Admin_nav() {
               </ul>
             ) : (
               <ul className="navbar-nav">
-                <img src="https://api.rabowah.com/wp-content/uploads/2020/11/Webp.net-resizeimage.jpg" />
+                <img src={logo} />
                 <hr />
                 <div style={{ marginBottom: "10px" }} className="row">
                   <div className="col-4">

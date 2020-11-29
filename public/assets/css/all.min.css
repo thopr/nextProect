@@ -16,7 +16,9 @@
     text-rendering: auto;
     line-height: 1
 }
-
+.color-iconn{
+    font-size:80px !important;
+  }
 .fa-lg {
     font-size: 1.33333em;
     line-height: .75em;
