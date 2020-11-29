@@ -47,15 +47,6 @@ function Admin_nav() {
             {Cookies.get("UserType") == "admin" ? (
               <>
                 <ul className="navbar-nav" style={{ textAlign: "right" }}>
-                  <img
-                    onClick={() => {
-                      logout();
-
-                      router.push("/Management");
-                    }}
-                    src="https://i.ibb.co/zVD23x4/5e8b76c87d89db419268f2de-Web-1920-58.png"
-                  />
-
                   <hr />
                   <div style={{ marginBottom: "10px" }} className="row">
                     <div className="col-4">
@@ -78,14 +69,16 @@ function Admin_nav() {
                         <div style={{ color: "#4CAF50" }} className="col-auto">
                           مدير
                         </div>
-                        <div className="col-auto">
+                        <div className="col-auto" style={{ marginTop: "3%" }}>
                           {" "}
                           <Link
                             //href={{ pathname: "/about", query: { name: "test" } }}
                             href="/UpdateProfileA"
                             // replace
                           >
-                            <a>تعديل</a>
+                            <a>
+                              <i class="ni ni-settings-gear-65" />
+                            </a>
                           </Link>
                         </div>
                       </div>
@@ -249,9 +242,7 @@ function Admin_nav() {
                         }
                       >
                         <i className="ni ni-circle-08 " />
-                        <span className="nav-link-text">
-                          الموافقة على المستفيدين
-                        </span>
+                        <span className="nav-link-text">إعتماد المستفيدين</span>
                       </a>
                     </Link>
                   </li>
@@ -308,9 +299,7 @@ function Admin_nav() {
                         }
                       >
                         <i className="ni ni-briefcase-24 " />
-                        <span className="nav-link-text">
-                          الموافقة على مندوب
-                        </span>
+                        <span className="nav-link-text">إعتماد مندوب</span>
                       </a>
                     </Link>
                   </li>
@@ -333,11 +322,28 @@ function Admin_nav() {
                       </a>
                     </Link>
                   </li>
+                  <img
+                    onClick={() => {
+                      logout();
+
+                      router.push("/Management");
+                    }}
+                    src="https://api.rabowah.com/wp-content/uploads/2020/11/Webp.net-resizeimage.jpg"
+                  />
+                  <div
+                    style={{
+                      textAlign: "center",
+                      backgroundColor: "rgb(245,246,248)",
+                    }}
+                  >
+                    <p>الدعم الفني</p>
+                    <p>INFO@GUTURESAGES.COM</p>
+                  </div>
                 </ul>
               </>
             ) : Cookies.get("UserType") == "Company" ? (
               <ul className="navbar-nav">
-                <img src="https://i.ibb.co/zVD23x4/5e8b76c87d89db419268f2de-Web-1920-58.png" />
+                <img src="https://api.rabowah.com/wp-content/uploads/2020/11/Webp.net-resizeimage.jpg" />
                 <hr />
                 <div style={{ marginBottom: "10px" }} className="row">
                   <div className="col-4">
@@ -461,7 +467,7 @@ function Admin_nav() {
               </ul>
             ) : (
               <ul className="navbar-nav">
-                <img src="https://i.ibb.co/zVD23x4/5e8b76c87d89db419268f2de-Web-1920-58.png" />
+                <img src="https://api.rabowah.com/wp-content/uploads/2020/11/Webp.net-resizeimage.jpg" />
                 <hr />
                 <div style={{ marginBottom: "10px" }} className="row">
                   <div className="col-4">
@@ -554,10 +560,7 @@ function Admin_nav() {
                       }
                     >
                       <i className="ni ni-building text-info" />
-                      <span className="nav-link-text">
-                        {" "}
-                        الموافقة على المستفييدن
-                      </span>
+                      <span className="nav-link-text"> إعتماد المستفيدين</span>
                     </a>
                   </Link>
                 </li>

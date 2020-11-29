@@ -54,7 +54,7 @@ const BranchCoubonTable = ({
   const [newCompany, setnewCompany] = useState(false);
   const [Section_id, setSection_id] = useState(false);
   const [value, setvalue] = useState(false);
-  const [coubonName, setcoubonName] = useState(false);
+  const [coubonName, setcoubonName] = useState("");
   const [coubonType, setcoubonType] = useState(false);
 
   const [ModelState, setModelState] = useState(false);
@@ -62,6 +62,7 @@ const BranchCoubonTable = ({
   //const [theCouponBranches, settheCouponBranches] = useState([]);
 
   const [edit, setedit] = useState(false);
+  const [editModel, seteditModel] = useState(false);
 
   const [Company, setCompany] = useState([]);
 
@@ -99,6 +100,24 @@ const BranchCoubonTable = ({
     setfinalBranches(f);
   }
 
+  function UpdateCoubontName() {
+    console.log("-----------------------------");
+    console.log(data);
+    console.log("-----------------------------");
+    let dd = {
+      Section_id,
+      coubonName,
+    };
+    api.post("rabwa/UpdateCoubontName", dd).then((res) => {
+      console.log(res.data);
+      alert.show("تم بنجاح", {
+        timeout: 2000,
+        type: "success",
+      });
+      GoBackAndTriggerMutation();
+    });
+  }
+
   function SaveBranches(data) {
     console.log("-----------------------------");
     console.log(data);
@@ -115,7 +134,6 @@ const BranchCoubonTable = ({
       GoBackAndTriggerMutation();
     });
   }
-
   async function openModal(ModalData) {
     await api
       .get("rabwa/GetCouponBranches?Section_id=" + ModalData)
@@ -233,11 +251,9 @@ const BranchCoubonTable = ({
                             <th scope="col" data-sort="name">
                               الإسم
                             </th>
-
                             <th scope="col" data-sort="status">
                               النوع
                             </th>
-
                             <th scope="col" data-sort="completion">
                               القيمة
                             </th>
@@ -247,7 +263,7 @@ const BranchCoubonTable = ({
                             <th scope="col" data-sort="completion">
                               الصلاحية
                             </th>
-
+                            <th scope="col" />
                             <th scope="col" />
                             <th scope="col" />
                           </tr>
@@ -323,6 +339,21 @@ const BranchCoubonTable = ({
                                           إضافة كوبونات
                                         </button>
                                       </td>
+                                      <td className="name">
+                                        <button
+                                          type="button"
+                                          class="btn"
+                                          data-toggle="modal"
+                                          data-target="#modal-default"
+                                          onClick={() => {
+                                            seteditModel(true);
+                                            setSection_id(coubon.Section_id);
+                                            setcoubonName(coubon.name);
+                                          }}
+                                        >
+                                          تعديل
+                                        </button>
+                                      </td>
                                     </tr>
                                   ) : coubon.type == "all_code" ? (
                                     <tr>
@@ -367,6 +398,21 @@ const BranchCoubonTable = ({
                                           backgroundColor: "rgb(194 224 160)",
                                         }}
                                       ></td>
+                                      <td className="name">
+                                        <button
+                                          type="button"
+                                          class="btn"
+                                          data-toggle="modal"
+                                          data-target="#modal-default"
+                                          onClick={() => {
+                                            seteditModel(true);
+                                            setSection_id(coubon.Section_id);
+                                            setcoubonName(coubon.name);
+                                          }}
+                                        >
+                                          تعديل
+                                        </button>
+                                      </td>
                                     </tr>
                                   ) : (
                                     <tr>
@@ -465,10 +511,26 @@ const BranchCoubonTable = ({
                                           data-toggle="modal"
                                           data-target="#modal-default"
                                           onClick={() => {
+                                            seteditModel(false);
                                             openModal(coubon.Section_id);
                                           }}
                                         >
                                           الفروع
+                                        </button>
+                                      </td>
+                                      <td className="name">
+                                        <button
+                                          type="button"
+                                          class="btn"
+                                          data-toggle="modal"
+                                          data-target="#modal-default"
+                                          onClick={() => {
+                                            seteditModel(true);
+                                            setSection_id(coubon.Section_id);
+                                            setcoubonName(coubon.name);
+                                          }}
+                                        >
+                                          تعديل
                                         </button>
                                       </td>
                                     </tr>
@@ -552,6 +614,21 @@ const BranchCoubonTable = ({
                                           إضافة كوبونات
                                         </button>
                                       </td>
+                                      <td className="name">
+                                        <button
+                                          type="button"
+                                          class="btn"
+                                          data-toggle="modal"
+                                          data-target="#modal-default"
+                                          onClick={() => {
+                                            seteditModel(true);
+                                            setSection_id(coubon.Section_id);
+                                            setcoubonName(coubon.name);
+                                          }}
+                                        >
+                                          تعديل
+                                        </button>
+                                      </td>
                                     </tr>
                                   ) : coubon.type == "all_code" ? (
                                     <tr>
@@ -596,6 +673,21 @@ const BranchCoubonTable = ({
                                           backgroundColor: "rgb(194 224 160)",
                                         }}
                                       ></td>
+                                      <td className="name">
+                                        <button
+                                          type="button"
+                                          class="btn"
+                                          data-toggle="modal"
+                                          data-target="#modal-default"
+                                          onClick={() => {
+                                            seteditModel(true);
+                                            setSection_id(coubon.Section_id);
+                                            setcoubonName(coubon.name);
+                                          }}
+                                        >
+                                          تعديل
+                                        </button>
+                                      </td>
                                     </tr>
                                   ) : (
                                     <tr>
@@ -696,6 +788,21 @@ const BranchCoubonTable = ({
                                           الفروع
                                         </button>
                                       </td>
+                                      <td className="name">
+                                        <button
+                                          type="button"
+                                          class="btn"
+                                          data-toggle="modal"
+                                          data-target="#modal-default"
+                                          onClick={() => {
+                                            seteditModel(true);
+                                            setSection_id(coubon.Section_id);
+                                            setcoubonName(coubon.name);
+                                          }}
+                                        >
+                                          تعديل
+                                        </button>
+                                      </td>
                                     </tr>
                                   )}
                                 </>
@@ -740,156 +847,244 @@ const BranchCoubonTable = ({
       </div>
 
       {/* Argon MODEL */}
-
-      <div
-        class={ModelState ? "modal fade show" : "modal fade "}
-        id="modal-default"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="modal-default"
-        aria-hidden={ModelState ? "false" : "true"}
-        style={
-          ModelState
-            ? { display: "block", paddingRight: "14px" }
-            : { display: "none" }
-        }
-      >
+      {editModel ? (
         <div
-          class="modal-dialog modal- modal-dialog-centered modal-"
-          role="document"
+          class={ModelState ? "modal fade show" : "modal fade "}
+          id="modal-default"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="modal-default"
+          aria-hidden={ModelState ? "false" : "true"}
+          style={
+            ModelState
+              ? { display: "block", paddingRight: "14px" }
+              : { display: "none" }
+          }
         >
-          <div class="modal-content">
-            <div class="modal-header">
-              <h6 class="modal-title" id="modal-title-default">
-                الفروع التي يمكن صرف الكوبونات بها
-              </h6>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-                onClick={() => {
-                  setModelState(false);
-                }}
-              >
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
+          <div
+            class="modal-dialog modal- modal-dialog-centered modal-"
+            role="document"
+          >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h6 class="modal-title" id="modal-title-default">
+                  تعديل : {coubonName}
+                </h6>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                  onClick={() => {
+                    setModelState(false);
+                  }}
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
 
-            <div class="modal-body">
-              {finalBranches.length > 0 ? (
-                <>
-                  <div className="table-responsive">
-                    <div>
-                      <table className="table align-items-center">
-                        <thead className="thead-light">
-                          <tr>
-                            <th scope="col" className="sort" data-sort="name">
-                              اسم الفرع
-                            </th>
-                            <th
-                              scope="col"
-                              className="sort"
-                              data-sort="budget"
-                            ></th>
-                          </tr>
-                        </thead>
-                        <tbody className="list">
-                          {finalBranches.map((listBranches, index) => {
-                            return (
-                              <>
-                                {" "}
-                                <tr>
-                                  <td
-                                    className="budget"
-                                    style={{ float: "right" }}
-                                  >
-                                    {listBranches.branch_name}
-                                  </td>
-                                  <td>
-                                    {listBranches.status ? (
-                                      <button
-                                        type="button"
-                                        class="btn btn-danger"
-                                        onClick={() => {
-                                          changeBranches(
-                                            false,
-                                            listBranches.id
-                                          );
-                                        }}
-                                      >
-                                        إلغاء
-                                      </button>
-                                    ) : (
-                                      <button
-                                        type="button"
-                                        class="btn btn-primary"
-                                        onClick={() => {
-                                          changeBranches(true, listBranches.id);
-                                        }}
-                                      >
-                                        تفعيل
-                                      </button>
-                                    )}
-                                  </td>
-                                </tr>
-                              </>
-                            );
-                          })}
-                        </tbody>
-                      </table>
+              <div class="modal-body">
+                <div dir="rtl" className="row">
+                  <div className="col-lg-6">
+                    <div className="form-group" style={{ textAlign: "right" }}>
+                      <label className="form-control-label">إسم الكوبون</label>
+                      <input
+                        type="text"
+                        name="coubonName"
+                        onChange={(e) => {
+                          setcoubonName(e.target.value);
+                        }}
+                        value={coubonName}
+                        className="form-control"
+                        placeholder="إسم الكوبون"
+                      />
                     </div>
                   </div>
-                </>
-              ) : (
-                "لا يوجد بيانات"
-              )}
-              {showSkeleton ? <Skeleton height={40} count={10} /> : ""}
-            </div>
+                </div>
+              </div>
 
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-link "
-                data-dismiss="modal"
-                style={{ float: "right" }}
-                onClick={() => {
-                  setModelState(false);
-                }}
-              >
-                إغلاق
-              </button>
-              <button
-                type="button"
-                class="btn btn-link "
-                data-dismiss="modal"
-                style={{ float: "left" }}
-                onClick={() => {
-                  let test = [];
-                  for (let index = 0; index < finalBranches.length; index++) {
-                    const element = finalBranches[index];
-
-                    if (element.status == true) {
-                      test.push(element);
-                    }
-                  }
-                  if (test.length > 0) {
-                    SaveBranches(finalBranches);
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-link "
+                  data-dismiss="modal"
+                  style={{ float: "right" }}
+                  onClick={() => {
                     setModelState(false);
-                  } else {
-                    alert.show("يجب تفعيل فرع واحد على الأقل", {
-                      timeout: 2000,
-                      type: "danger",
-                    });
-                  }
-                }}
-              >
-                حفظ
-              </button>
+                  }}
+                >
+                  إغلاق
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-link "
+                  data-dismiss="modal"
+                  style={{ float: "left" }}
+                  onClick={() => {
+                    UpdateCoubontName(Section_id, coubonName);
+                  }}
+                >
+                  حفظ
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div
+          class={ModelState ? "modal fade show" : "modal fade "}
+          id="modal-default"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="modal-default"
+          aria-hidden={ModelState ? "false" : "true"}
+          style={
+            ModelState
+              ? { display: "block", paddingRight: "14px" }
+              : { display: "none" }
+          }
+        >
+          <div
+            class="modal-dialog modal- modal-dialog-centered modal-"
+            role="document"
+          >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h6 class="modal-title" id="modal-title-default">
+                  الفروع التي يمكن صرف الكوبونات بها
+                </h6>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                  onClick={() => {
+                    setModelState(false);
+                  }}
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+                {finalBranches.length > 0 ? (
+                  <>
+                    <div className="table-responsive">
+                      <div>
+                        <table className="table align-items-center">
+                          <thead className="thead-light">
+                            <tr>
+                              <th scope="col" className="sort" data-sort="name">
+                                اسم الفرع
+                              </th>
+                              <th
+                                scope="col"
+                                className="sort"
+                                data-sort="budget"
+                              ></th>
+                            </tr>
+                          </thead>
+                          <tbody className="list">
+                            {finalBranches.map((listBranches, index) => {
+                              return (
+                                <>
+                                  {" "}
+                                  <tr>
+                                    <td
+                                      className="budget"
+                                      style={{ float: "right" }}
+                                    >
+                                      {listBranches.branch_name}
+                                    </td>
+                                    <td>
+                                      {listBranches.status ? (
+                                        <button
+                                          type="button"
+                                          class="btn btn-danger"
+                                          onClick={() => {
+                                            changeBranches(
+                                              false,
+                                              listBranches.id
+                                            );
+                                          }}
+                                        >
+                                          إلغاء
+                                        </button>
+                                      ) : (
+                                        <button
+                                          type="button"
+                                          class="btn btn-primary"
+                                          onClick={() => {
+                                            changeBranches(
+                                              true,
+                                              listBranches.id
+                                            );
+                                          }}
+                                        >
+                                          تفعيل
+                                        </button>
+                                      )}
+                                    </td>
+                                  </tr>
+                                </>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  "لا يوجد بيانات"
+                )}
+                {showSkeleton ? <Skeleton height={40} count={10} /> : ""}
+              </div>
+
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-link "
+                  data-dismiss="modal"
+                  style={{ float: "right" }}
+                  onClick={() => {
+                    setModelState(false);
+                  }}
+                >
+                  إغلاق
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-link "
+                  data-dismiss="modal"
+                  style={{ float: "left" }}
+                  onClick={() => {
+                    let test = [];
+                    for (let index = 0; index < finalBranches.length; index++) {
+                      const element = finalBranches[index];
+
+                      if (element.status == true) {
+                        test.push(element);
+                      }
+                    }
+                    if (test.length > 0) {
+                      SaveBranches(finalBranches);
+                      setModelState(false);
+                    } else {
+                      alert.show("يجب تفعيل فرع واحد على الأقل", {
+                        timeout: 2000,
+                        type: "danger",
+                      });
+                    }
+                  }}
+                >
+                  حفظ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Argon MODEL */}
     </div>
   );
