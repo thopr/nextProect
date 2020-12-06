@@ -10,6 +10,8 @@ function EditUser({ TheUser, updatesetstep }) {
   const User = TheUser;
   console.log("here");
   console.log(User);
+  console.log("hereqqqqqqqqqqqqqqq");
+
   const alert = useAlert();
 
   const [TheSelectedCountry, setTheSelectedCountry] = useState(User.city);
@@ -36,9 +38,7 @@ function EditUser({ TheUser, updatesetstep }) {
   const { toggler, settoggler, loading } = useAuth();
   const [spinner, setspinner] = useState(false);
 
-  const { UserMeta, UserMetaisLoading, UserMetaisError } = GetUserMeta(
-    User.user_id
-  );
+  const { UserMeta, UserMetaisLoading, UserMetaisError } = GetUserMeta(User.id);
 
   //const UserNeeds = isLoading ? false : UserMeta.data.needs;
   /* const UserNeeds = isLoading ? false : UserMeta;
@@ -178,7 +178,7 @@ function EditUser({ TheUser, updatesetstep }) {
       categories: list,
       oldPhone: User.phone,
       oldemail: User.email,
-      TheUser_id: User.user_id,
+      TheUser_id: User.id,
       des,
     };
 

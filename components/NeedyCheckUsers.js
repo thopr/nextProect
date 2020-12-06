@@ -74,6 +74,7 @@ function NeedyCheckUsers({ data, myEditUser, myDisUser, openModal }) {
           <div className="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
             <a
               onClick={() => {
+                console.log(data);
                 myEditUser(data);
               }}
               class="dropdown-item"

@@ -160,7 +160,10 @@ function MyUsers() {
   }
 
   function myEditUser(theSelectedUser) {
+    console.log("----------------------");
     console.log(theSelectedUser);
+    console.log("----------------------");
+
     setTheUser(theSelectedUser);
     setStep(2);
   }
