@@ -41,6 +41,8 @@ function UserInfo({ id, setuserInfoMode }) {
   const [TheSelectedcategory, setTheSelectedcategory] = useState(8);
   const [TheUser, setTheUser] = useState([]);
   const [user_info, setuser_info] = useState([]);
+  const [user_members_ids, setuser_members_ids] = useState([]);
+
   const [Mandobe_info, setMandobe_info] = useState([]);
 
   const { user, isAuthenticated, loading } = useAuth();
@@ -77,6 +79,8 @@ function UserInfo({ id, setuserInfoMode }) {
     console.log(testState);
 
     setuser_info(testState.user_info);
+    setuser_members_ids(testState.user_members_ids);
+
     setMandobe_info(testState.Mandobe_info);
 
     setuser_sent_coubons(testState.user_sent_coubons);
@@ -398,8 +402,75 @@ function UserInfo({ id, setuserInfoMode }) {
                 <div class="col-12">
                   <h3 style={{ textAlign: "center" }}>وصف الحالة</h3>
                 </div>
-                <div class="col-12">{user_info[0].des}</div>
+                <div class="col-12" style={{ textAlign: "right" }}>
+                  {user_info[0].des}
+                </div>
               </div>
+
+              <div class="row">
+                <div class="col-12" style={{ textAlign: "center" }}>
+                  <button
+                    class="btn btn-primary"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseExample"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    عرض الهويات المضافة
+                  </button>
+
+                  <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                      {user_members_ids.length > 0 ? (
+                        <>
+                          <table
+                            dir="rtl"
+                            className="table align-items-center table-flush"
+                            style={{ textAlign: "right" }}
+                          >
+                            <thead className="thead-light">
+                              <tr>
+                                <th scope="col" data-sort="name">
+                                  الإسم
+                                </th>
+
+                                <th scope="col" data-sort="status">
+                                  صورة الهوية
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody className="list">
+                              {user_members_ids.map(
+                                (user_members_id, index) => {
+                                  return (
+                                    <tr>
+                                      <td>{user_members_id.member_name}</td>
+                                      {user_members_id.member_img ? (
+                                        <td>
+                                          <br />
+                                          <a href={user_members_id.member_img}>
+                                            صورة الهوية
+                                          </a>
+                                        </td>
+                                      ) : (
+                                        <td>لا يوجد</td>
+                                      )}
+                                    </tr>
+                                  );
+                                }
+                              )}
+                            </tbody>
+                          </table>
+                        </>
+                      ) : (
+                        "لا يوجد بيانات"
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <hr />
 
               <div class="card card-stats">

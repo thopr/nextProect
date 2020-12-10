@@ -4,6 +4,8 @@ import HeaderNav from "../components/HeaderNav";
 import ListMandobes from "../components/ListMandobes";
 
 import PersonNeeds from "../components/PersonNeeds";
+import ButtonUploadImage from "../components/ButtonUpload";
+
 import api from "../services/Api";
 
 import Footer from "../components/Footer";
@@ -12,14 +14,27 @@ import useAuth, { ProtectRoute } from "../contexts/auth.js";
 import { useAlert } from "react-alert";
 import Router from "next/router";
 
+import Cookies from "js-cookie";
+
+import axios from "axios";
+
 function Table() {
   const alert = useAlert();
 
   //const [project,setProject] = useState(false);
 
+  const [SelectedMembers, setSelectedMembers] = useState([
+    {
+      Member_id: 99999999999,
+      Member_Name: "",
+      Member_img: false,
+    },
+  ]);
+
   const { toggler, settoggler, loading } = useAuth();
   const [spinner, setspinner] = useState(false);
   const [NewMandobe_id, setNewMandobe_id] = useState(0);
+  const [pagedown, setpagedown] = useState(0);
 
   console.log(NewMandobe_id);
 
@@ -174,6 +189,7 @@ function Table() {
       des,
       mandobe_id: NewMandobe_id,
       address,
+      SelectedMembers,
     };
 
     console.log(data);
@@ -233,6 +249,13 @@ function Table() {
       });
     }
 
+    if (SelectedMembers.length < NumberOfmembers) {
+      checke = false;
+      alert.show("الرجاء إضافة هويات جميع أفراد العائلة", {
+        timeout: 2000,
+        type: "error",
+      });
+    }
     setspinner(true);
     if (checke) {
       api
@@ -331,7 +354,122 @@ function Table() {
     setshare(tt);
   }
 
+  function getNumberOfmembers() {
+    let mycalc =
+      0 +
+      parseInt(oldWoman) +
+      parseInt(oldMan) +
+      parseInt(accibilityPerson) +
+      parseInt(baby) +
+      parseInt(orphanGirls) +
+      parseInt(orphanBoys) +
+      parseInt(widows) +
+      parseInt(girls) +
+      parseInt(guys) +
+      parseInt(women) +
+      parseInt(men) +
+      parseInt(girl) +
+      parseInt(boy);
+
+    return mycalc;
+  }
+
+  const NumberOfmembers = getNumberOfmembers();
+
+  function removeMeber(QMember) {
+    let mydata = SelectedMembers;
+    let newdata = [];
+    for (let index = 0; index < mydata.length; index++) {
+      const element = mydata[index];
+
+      if (element.Member_id != QMember.Member_id) {
+        newdata.push(element);
+      }
+    }
+    setSelectedMembers(newdata);
+    setpagedown(pagedown + 1);
+  }
+
+  function removeMember_img(QMember) {
+    let mydata = SelectedMembers;
+    let newdata = [];
+    for (let index = 0; index < mydata.length; index++) {
+      const element = mydata[index];
+
+      if (element.Member_id == QMember.Member_id) {
+        element.Member_img = "";
+      }
+      newdata.push(element);
+    }
+    setSelectedMembers(newdata);
+  }
+
+  function UpdateMembereName(QMember, NewName) {
+    let mydata = SelectedMembers;
+    let newdata = [];
+    for (let index = 0; index < mydata.length; index++) {
+      const element = mydata[index];
+
+      if (element.Member_id == QMember.Member_id) {
+        element.Member_Name = NewName;
+      }
+      newdata.push(element);
+    }
+    setSelectedMembers(newdata);
+  }
+
   let step2 = step;
+
+  const token = Cookies.get("token");
+  const siteUrl = Cookies.get("siteUrl");
+
+  function NewMember() {
+    let mydata = SelectedMembers;
+    let random_id = Math.random();
+    let newdata = {
+      Member_id: random_id,
+      Member_Name: "",
+      Member_img: false,
+    };
+
+    mydata.push(newdata);
+
+    setSelectedMembers(mydata);
+
+    setpagedown(pagedown + 1);
+  }
+
+  function handleThumbnailProduct(file, QMember) {
+    let formData = new FormData();
+    let myimg = "";
+
+    formData.append("file", file);
+
+    axios
+      .post(siteUrl + "wp/v2/media", formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((result) => {
+        console.log(result.data.source_url);
+        myimg = result.data.source_url;
+        //add it here
+
+        let mydata = SelectedMembers;
+        let newdata = [];
+        for (let index = 0; index < mydata.length; index++) {
+          const element = mydata[index];
+
+          if (element.Member_id == QMember.Member_id) {
+            element.Member_img = myimg;
+          }
+          newdata.push(element);
+        }
+        setSelectedMembers(newdata);
+      });
+  }
+
   return (
     <>
       <body className="rtl g-sidenav-show g-sidenav-pinned" dir="rtl">
@@ -1284,51 +1422,170 @@ function Table() {
                         ""
                       )}
                       {step == 3 ? (
-                        <div>
-                          <div className="table-responsive">
-                            <div>
-                              <table className="table align-items-center">
-                                <thead className="thead-light">
-                                  <tr>
-                                    <th
-                                      scope="col"
-                                      className="sort"
-                                      data-sort="name"
-                                    >
-                                      الإحتياج
-                                    </th>
-                                    <th
-                                      scope="col"
-                                      className="sort"
-                                      data-sort="budget"
-                                    >
-                                      اختيار
-                                    </th>
-                                  </tr>
-                                </thead>
-                                <tbody className="list">
-                                  {categories.length > 0
-                                    ? categories.map((data, i) => {
-                                        return (
-                                          <PersonNeeds
-                                            data={data}
-                                            updateArray={updateArray}
-                                            removeUser={removeUser}
-                                          />
-                                        );
-                                      })
-                                    : ""}
-                                </tbody>
-                              </table>
-                            </div>
-                          </div>
-                        </div>
+                        <>
+                          <h1 style={{ textAlign: "center" }}>
+                            إضافة هويات افراد العائلة {NumberOfmembers} فرد
+                          </h1>
+                          {SelectedMembers.length > 0 ? (
+                            <>
+                              {SelectedMembers.map((Member, index) => {
+                                return (
+                                  <>
+                                    <div className="card" key={pagedown}>
+                                      <div className="card-body">
+                                        <div className="row">
+                                          <div className="col-md-6">
+                                            <div className="form-group">
+                                              <label className="form-control-label">
+                                                الإسم على الهوية
+                                              </label>
+
+                                              <input
+                                                type="text"
+                                                name={
+                                                  Member.Member_Name + "index"
+                                                }
+                                                onChange={(e) => {
+                                                  UpdateMembereName(
+                                                    Member,
+                                                    e.target.value
+                                                  );
+                                                }}
+                                                value={Member.Member_Name}
+                                                placeholder="الإسم على الهوية "
+                                                className="form-control"
+                                              />
+                                            </div>
+                                          </div>
+                                          <div className="col-md-5">
+                                            <div className="form-group">
+                                              <label className="form-control-label">
+                                                صورة الهوية او الإقامة
+                                              </label>
+
+                                              {Member.Member_img ? (
+                                                <>
+                                                  <br />
+                                                  <a href={Member.Member_img}>
+                                                    صورة الهوية
+                                                  </a>
+                                                  <button
+                                                    type="button"
+                                                    class="btn btn-primary mr-2"
+                                                    //style={{ float: "right" }}
+                                                    onClick={() => {
+                                                      removeMember_img(Member);
+                                                    }}
+                                                  >
+                                                    <span class="btn-inner--text">
+                                                      {" "}
+                                                      تعديل
+                                                    </span>
+                                                  </button>
+                                                </>
+                                              ) : (
+                                                <ButtonUploadImage
+                                                  typeImage="thumbnail"
+                                                  onChange={(thumbnail) =>
+                                                    handleThumbnailProduct(
+                                                      thumbnail.target.files[0],
+                                                      Member
+                                                    )
+                                                  }
+                                                />
+                                              )}
+                                            </div>
+                                          </div>
+                                          <div className="col-md-1">
+                                            <br />
+                                            <button
+                                              type="button"
+                                              class="btn btn-outline-danger"
+                                              style={{ float: "left" }}
+                                              onClick={() => {
+                                                removeMeber(Member);
+                                              }}
+                                            >
+                                              <span class="btn-inner--text">
+                                                {" "}
+                                              </span>
+                                              <span class="btn-inner--icon">
+                                                <i class="ni ni-fat-remove"></i>
+                                              </span>
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </>
+                                );
+                              })}
+                            </>
+                          ) : (
+                            ""
+                          )}
+                          <button
+                            type="button"
+                            class="btn btn-outline-warning"
+                            style={{ float: "right" }}
+                            onClick={() => {
+                              NewMember();
+                            }}
+                          >
+                            <span class="btn-inner--text"> إضافة فرد جديد</span>
+                            <span class="btn-inner--icon">
+                              <i class="ni ni-fat-add"></i>
+                            </span>
+                          </button>
+                        </>
                       ) : (
                         ""
                       )}
 
                       {step == 4 ? (
                         <div>
+                          <div>
+                            <div className="table-responsive">
+                              <div>
+                                <table className="table align-items-center">
+                                  <thead className="thead-light">
+                                    <tr>
+                                      <th
+                                        scope="col"
+                                        className="sort"
+                                        data-sort="name"
+                                      >
+                                        الإحتياج
+                                      </th>
+                                      <th
+                                        scope="col"
+                                        className="sort"
+                                        data-sort="budget"
+                                      >
+                                        اختيار
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody className="list">
+                                    {categories.length > 0
+                                      ? categories.map((data, i) => {
+                                          return (
+                                            <PersonNeeds
+                                              data={data}
+                                              updateArray={updateArray}
+                                              removeUser={removeUser}
+                                            />
+                                          );
+                                        })
+                                      : ""}
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                          <br />
+                          <hr />
+                          <h2 style={{ textAlign: "center" }}>المندوب</h2>
                           <ListMandobes
                             user_id={0}
                             mandobe_id={0}
