@@ -446,7 +446,7 @@ function UserInfo({ id, setuserInfoMode }) {
                                   return (
                                     <tr>
                                       <td>{user_members_id.member_name}</td>
-                                      <td>{user_members_id.member_Number}</td>
+                                      <td>{user_members_id.member_number}</td>
                                     </tr>
                                   );
                                 }
