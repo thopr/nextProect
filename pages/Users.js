@@ -6,6 +6,8 @@ import UserCards from "../components/UserCards";
 import NewCardForm from "../components/NewCardForm";
 import ListMandobes from "../components/ListMandobes";
 
+import CounterInput from "react-counter-input";
+
 import EditUser from "../components/EditUser";
 import UserInfo from "../components/UserInfo";
 
@@ -41,6 +43,7 @@ function Users() {
   const [SType, setSType] = useState("all");
 
   const [Spaiority, setSpaiority] = useState("all");
+  const [SNumber, setSNumber] = useState(0);
 
   const [SsearchName, setSsearchName] = useState("");
   const [SsearchPhone, setSsearchPhone] = useState("");
@@ -52,6 +55,7 @@ function Users() {
   const [TheSelectedcategory, setTheSelectedcategory] = useState(8);
   const [TheSelectedpiority, setTheSelectedpiority] = useState("all");
   const [TheSelectedType, setTheSelectedType] = useState("all");
+  const [TheSelectedNumber, setTheSelectedNumber] = useState(0);
 
   const [TheUser, setTheUser] = useState([]);
 
@@ -83,7 +87,8 @@ function Users() {
     RsName,
     RsPhone,
     Spaiority,
-    SType
+    SType,
+    SNumber
   );
 
   const results = isLoading ? false : data.data;
@@ -289,7 +294,9 @@ function Users() {
               "&Spaiority=" +
               Spaiority +
               "&SType=" +
-              SType
+              SType +
+              "&SNumber=" +
+              SNumber
           );
         }
 
@@ -332,7 +339,9 @@ function Users() {
           "&Spaiority=" +
           Spaiority +
           "&SType=" +
-          SType
+          SType +
+          "&SNumber=" +
+          SNumber
       );
     }
   }
@@ -381,7 +390,9 @@ function Users() {
             "&Spaiority=" +
             Spaiority +
             "&SType=" +
-            SType
+            SType +
+            "&SNumber=" +
+            SNumber
         );
       }
       alert.show("تم بنجاح", {
@@ -411,6 +422,7 @@ function Users() {
     setScat(TheSelectedcategory);
     setSType(TheSelectedType);
     setSpaiority(TheSelectedpiority);
+    setSNumber(TheSelectedNumber);
   }
 
   function phoneS() {
@@ -834,7 +846,7 @@ function Users() {
                                   </select>
                                 </div>
                               </div>
-                              <div className="col-lg-4">
+                              <div className="col-lg-3">
                                 <div className="form-group">
                                   <label className="form-control-label">
                                     الإحتياج
@@ -858,7 +870,7 @@ function Users() {
                                   </select>
                                 </div>
                               </div>
-                              <div className="col-lg-4">
+                              <div className="col-lg-3">
                                 <div className="form-group">
                                   <label className="form-control-label">
                                     الحالة
@@ -898,6 +910,20 @@ function Users() {
                                     <option value="single">فرد</option>
                                     <option value="family">عائلة</option>
                                   </select>
+                                </div>
+                              </div>
+
+                              <div className="col-lg-2">
+                                <div className="form-group">
+                                  <label className="form-control-label">
+                                    عدد الأفراد
+                                  </label>
+                                  <CounterInput
+                                    min={0}
+                                    onCountChange={(count) => {
+                                      setTheSelectedNumber(count);
+                                    }}
+                                  />
                                 </div>
                               </div>
 

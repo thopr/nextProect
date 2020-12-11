@@ -4,6 +4,7 @@ import { Checkbox } from "@bit/zenhomes.zenhomes-ui.checkbox";
 import React, { useState, useEffect } from "react";
 import HeaderNav from "../components/HeaderNav";
 import UserInfo from "../components/UserInfo";
+import CounterInput from "react-counter-input";
 
 import FindBranch from "./findBranch";
 import api from "../services/Api";
@@ -43,6 +44,8 @@ function GiveNeedyCoubon() {
   const [Saera, setSaera] = useState("all");
   const [SType, setSType] = useState("all");
 
+  const [SNumber, setSNumber] = useState(0);
+
   const [Spaiority, setSpaiority] = useState("all");
   const [Scat, setScat] = useState(8);
   const [SsearchName, setSsearchName] = useState("");
@@ -57,6 +60,7 @@ function GiveNeedyCoubon() {
   const [TheSelectedhide, setTheSelectedhide] = useState("dont");
   const [TheSelectedpiority, setTheSelectedpiority] = useState("all");
   const [TheSelectedType, setTheSelectedType] = useState("all");
+  const [TheSelectedNumber, setTheSelectedNumber] = useState(0);
 
   const { user, isAuthenticated, loading } = useAuth();
   const [MUuserID, setMUuserID] = useState(0);
@@ -77,7 +81,8 @@ function GiveNeedyCoubon() {
     RsPhone,
     hide,
     Spaiority,
-    SType
+    SType,
+    SNumber
   );
 
   const results = isLoading ? false : data.data;
@@ -242,6 +247,7 @@ function GiveNeedyCoubon() {
     sethide(TheSelectedhide);
     setSType(TheSelectedType);
     setSpaiority(TheSelectedpiority);
+    setSNumber(TheSelectedNumber);
   }
 
   function phoneS() {
@@ -345,10 +351,8 @@ function GiveNeedyCoubon() {
                 Spaiority +
                 "&SType=" +
                 SType +
-                "&Spaiority=" +
-                Spaiority +
-                "&SType=" +
-                SType
+                "&SNumber=" +
+                SNumber
             );
           }
           setStep(1);
@@ -730,7 +734,7 @@ function GiveNeedyCoubon() {
                                   </select>
                                 </div>
                               </div>
-                              <div className="col-lg-3">
+                              <div className="col-lg-2">
                                 <div className="form-group">
                                   <label className="form-control-label">
                                     إخفاء المصروف لهم
@@ -750,7 +754,7 @@ function GiveNeedyCoubon() {
                                   </select>
                                 </div>
                               </div>
-                              <div className="col-lg-3">
+                              <div className="col-lg-2">
                                 <div className="form-group">
                                   <label className="form-control-label">
                                     الحالة
@@ -790,6 +794,19 @@ function GiveNeedyCoubon() {
                                     <option value="single">فرد</option>
                                     <option value="family">عائلة</option>
                                   </select>
+                                </div>
+                              </div>
+                              <div className="col-lg-2">
+                                <div className="form-group">
+                                  <label className="form-control-label">
+                                    عدد الأفراد
+                                  </label>
+                                  <CounterInput
+                                    min={0}
+                                    onCountChange={(count) => {
+                                      setTheSelectedNumber(count);
+                                    }}
+                                  />
                                 </div>
                               </div>
 

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import HeaderNav from "../components/HeaderNav";
 import UserCards from "../components/UserCards";
 import NewCardForm from "../components/NewCardForm";
+import CounterInput from "react-counter-input";
 
 import EditUser from "../components/EditUser";
 import UserInfo from "../components/UserInfo";
@@ -36,6 +37,7 @@ function MyUsers() {
   const [Saera, setSaera] = useState("all");
   const [Scat, setScat] = useState(8);
   const [SType, setSType] = useState("all");
+  const [SNumber, setSNumber] = useState(0);
 
   const [Spaiority, setSpaiority] = useState("all");
   const [SsearchName, setSsearchName] = useState("");
@@ -50,6 +52,7 @@ function MyUsers() {
   const [TheSelectedpiority, setTheSelectedpiority] = useState("all");
   const [TheSelectedType, setTheSelectedType] = useState("all");
   const [TheUser, setTheUser] = useState([]);
+  const [TheSelectedNumber, setTheSelectedNumber] = useState(0);
 
   const { user, isAuthenticated, loading } = useAuth();
   const [MUuserID, setMUuserID] = useState(0);
@@ -69,7 +72,8 @@ function MyUsers() {
     RsPhone,
     mandobe_id,
     Spaiority,
-    SType
+    SType,
+    SNumber
   );
 
   const results = isLoading ? false : data.data;
@@ -169,7 +173,9 @@ function MyUsers() {
           "&Spaiority=" +
           Spaiority +
           "&SType=" +
-          SType
+          SType +
+          "&SNumber=" +
+          SNumber
       );
     }
   }
@@ -223,7 +229,9 @@ function MyUsers() {
             "&Spaiority=" +
             Spaiority +
             "&SType=" +
-            SType
+            SType +
+            "&SNumber=" +
+            SNumber
         );
       }
       alert.show("تم بنجاح", {
@@ -253,6 +261,7 @@ function MyUsers() {
     setScat(TheSelectedcategory);
     setSType(TheSelectedType);
     setSpaiority(TheSelectedpiority);
+    setSNumber(TheSelectedNumber);
   }
 
   function phoneS() {
@@ -677,7 +686,7 @@ function MyUsers() {
                                   </select>
                                 </div>
                               </div>
-                              <div className="col-lg-4">
+                              <div className="col-lg-3">
                                 <div className="form-group">
                                   <label className="form-control-label">
                                     الإحتياج
@@ -701,7 +710,7 @@ function MyUsers() {
                                   </select>
                                 </div>
                               </div>
-                              <div className="col-lg-4">
+                              <div className="col-lg-3">
                                 <div className="form-group">
                                   <label className="form-control-label">
                                     الحالة
@@ -741,6 +750,19 @@ function MyUsers() {
                                     <option value="single">فرد</option>
                                     <option value="family">عائلة</option>
                                   </select>
+                                </div>
+                              </div>
+                              <div className="col-lg-2">
+                                <div className="form-group">
+                                  <label className="form-control-label">
+                                    عدد الأفراد
+                                  </label>
+                                  <CounterInput
+                                    min={0}
+                                    onCountChange={(count) => {
+                                      setTheSelectedNumber(count);
+                                    }}
+                                  />
                                 </div>
                               </div>
 
