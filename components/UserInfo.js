@@ -7,6 +7,7 @@ import useAuth, { ProtectRoute } from "../contexts/auth.js";
 import { useAlert } from "react-alert";
 import { mutate } from "swr";
 import { useRouter } from "next/router";
+import api from "../services/Api";
 
 function UserInfo({ id, setuserInfoMode }) {
   const [PieCartDataNumbers, setPieCartDataNumbers] = useState([]);
@@ -41,9 +42,9 @@ function UserInfo({ id, setuserInfoMode }) {
   const [TheSelectedcategory, setTheSelectedcategory] = useState(8);
   const [TheUser, setTheUser] = useState([]);
   const [user_info, setuser_info] = useState([]);
-  const [user_members_ids, setuser_members_ids] = useState([]);
 
   const [Mandobe_info, setMandobe_info] = useState([]);
+  const [pageup, setpageup] = useState(1);
 
   const { user, isAuthenticated, loading } = useAuth();
 
@@ -51,7 +52,7 @@ function UserInfo({ id, setuserInfoMode }) {
     UserStatisticsData,
     UserStatisticsisLoading,
     UserStatisticsisError,
-  } = UserStatistics(id);
+  } = UserStatistics(id, pageup);
 
   const UserStatisticsresults =
     UserStatisticsData == false ? false : UserStatisticsData;
@@ -73,13 +74,20 @@ function UserInfo({ id, setuserInfoMode }) {
     setmodalType("cards");
   }
 
+  function getuser_members_ids() {
+    if (UserStatisticsresults) {
+      let testState = UserStatisticsresults.data;
+      return testState.user_members_ids;
+    }
+  }
+  const user_members_ids = getuser_members_ids();
+
   if (UserStatisticsresults && newState) {
     let testState = UserStatisticsresults.data;
 
     console.log(testState);
 
     setuser_info(testState.user_info);
-    setuser_members_ids(testState.user_members_ids);
 
     setMandobe_info(testState.Mandobe_info);
 
@@ -300,6 +308,32 @@ function UserInfo({ id, setuserInfoMode }) {
   const [step, setStep] = useState(1);
 
   let step2 = step;
+  const [ModelData, setModelData] = useState([]);
+  const [EmebeberName, setEmebeberName] = useState("");
+  const [EmebeberNumber, setEmebeberNumber] = useState("");
+
+  function openModal(myuserData) {
+    console.log(myuserData);
+    setEmebeberNumber(myuserData.member_number);
+    setEmebeberName(myuserData.member_name);
+    setModelData(myuserData);
+  }
+
+  function UpdateUderIDS() {
+    let mydd = {
+      theId: ModelData.id,
+      EmebeberName,
+      EmebeberNumber,
+    };
+    console.log(mydd);
+    api.post("rabwa/UpdateUderIDS", mydd).then((res) => {
+      setpageup(pageup + 1);
+      alert.show("تم بنجاح", {
+        timeout: 2000,
+        type: "success",
+      });
+    });
+  }
   return (
     <div className="container mt-4">
       {UserStatisticsresults ? (
@@ -438,6 +472,9 @@ function UserInfo({ id, setuserInfoMode }) {
                                 <th scope="col" data-sort="status">
                                   رقم الهوية
                                 </th>
+                                <th scope="col" data-sort="status">
+                                  تعديل
+                                </th>
                               </tr>
                             </thead>
                             <tbody className="list">
@@ -447,6 +484,21 @@ function UserInfo({ id, setuserInfoMode }) {
                                     <tr>
                                       <td>{user_members_id.member_name}</td>
                                       <td>{user_members_id.member_number}</td>
+
+                                      <td>
+                                        {" "}
+                                        <button
+                                          type="button"
+                                          class="btn"
+                                          data-toggle="modal"
+                                          data-target="#modal-default"
+                                          onClick={() => {
+                                            openModal(user_members_id);
+                                          }}
+                                        >
+                                          تعديل
+                                        </button>
+                                      </td>
                                     </tr>
                                   );
                                 }
@@ -1536,6 +1588,100 @@ function UserInfo({ id, setuserInfoMode }) {
         ""
       )}
       {showSkeleton2 ? <Skeleton height={200} count={10} /> : ""}
+
+      {/* Argon MODEL */}
+      <div
+        class="modal fade"
+        id="modal-default"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="modal-default"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal- modal-dialog-centered modal-"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h6 class="modal-title" id="modal-title-default">
+                تعديل البيانات
+              </h6>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <div className="col-12" style={{ textAlign: "right" }}>
+                <div className="form-group">
+                  <label className="form-control-label">الإسم على الهوية</label>
+
+                  <input
+                    type="text"
+                    name={EmebeberName + "index"}
+                    onChange={(e) => {
+                      setEmebeberName(e.target.value);
+                    }}
+                    value={EmebeberName}
+                    placeholder="الإسم على الهوية "
+                    className="form-control"
+                  />
+                </div>
+              </div>
+              <div className="col-12" style={{ textAlign: "right" }}>
+                {" "}
+                <div className="form-group">
+                  <label className="form-control-label">
+                    رقم الهوية أو الإقامة
+                  </label>
+
+                  <input
+                    type="number"
+                    name={EmebeberNumber + "index"}
+                    onChange={(e) => {
+                      setEmebeberNumber(e.target.value);
+                    }}
+                    value={EmebeberNumber}
+                    placeholder="رقم الهوية"
+                    className="form-control"
+                  />
+                </div>
+              </div>
+
+              <button
+                type="button"
+                class="btn btn-danger block "
+                data-dismiss="modal"
+                style={{ width: "100%" }}
+                onClick={() => {
+                  UpdateUderIDS();
+                }}
+              >
+                تحديث
+              </button>
+              {showSkeleton2 ? <Skeleton height={40} count={10} /> : ""}
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-link "
+                data-dismiss="modal"
+                style={{ float: "left" }}
+              >
+                إغلاق
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Argon MODEL */}
     </div>
   );
 }

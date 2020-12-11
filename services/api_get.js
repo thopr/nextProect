@@ -84,10 +84,12 @@ export function CompanysStatistic(name) {
   };
 }
 
-export function UserStatistics(user_id) {
+export function UserStatistics(user_id, pageup) {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/UserStatistics?user_id=" + user_id,
+    loading
+      ? false
+      : "rabwa/UserStatistics?user_id=" + user_id + "&pageup=" + pageup,
     api.get
   );
   return {
