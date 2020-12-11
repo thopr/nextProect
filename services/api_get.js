@@ -221,7 +221,9 @@ export function Getuserss2(
   Saera,
   Scat,
   RsName,
-  RsPhone
+  RsPhone,
+  Spaiority,
+  SType
 ) {
   if (request == "firstTime") {
     const { loading } = useAuth();
@@ -260,7 +262,11 @@ export function Getuserss2(
             "&RsName=" +
             RsName +
             "&RsPhone=" +
-            RsPhone,
+            RsPhone +
+            "&Spaiority=" +
+            Spaiority +
+            "&SType=" +
+            SType,
 
       api.get
     );
@@ -285,7 +291,9 @@ export function GetMandobUsers(
   Scat,
   RsName,
   RsPhone,
-  mandobe_id
+  mandobe_id,
+  Spaiority,
+  SType
 ) {
   if (request == "firstTime") {
     const { loading } = useAuth();
@@ -326,7 +334,11 @@ export function GetMandobUsers(
             "&RsPhone=" +
             RsPhone +
             "&mandobe_id=" +
-            mandobe_id,
+            mandobe_id +
+            "&Spaiority=" +
+            Spaiority +
+            "&SType=" +
+            SType,
 
       api.get
     );
@@ -351,7 +363,9 @@ export function Getuserss(
   Scat,
   RsName,
   RsPhone,
-  hide
+  hide,
+  Spaiority,
+  SType
 ) {
   if (request == "firstTime") {
     const { loading } = useAuth();
@@ -392,7 +406,11 @@ export function Getuserss(
             "&RsPhone=" +
             RsPhone +
             "&hide=" +
-            hide,
+            hide +
+            "&Spaiority=" +
+            Spaiority +
+            "&SType=" +
+            SType,
 
       api.get
     );

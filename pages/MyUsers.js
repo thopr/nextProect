@@ -35,14 +35,20 @@ function MyUsers() {
   const [Scity, setScity] = useState("جدة");
   const [Saera, setSaera] = useState("all");
   const [Scat, setScat] = useState(8);
+  const [SType, setSType] = useState("all");
+
+  const [Spaiority, setSpaiority] = useState("all");
   const [SsearchName, setSsearchName] = useState("");
   const [SsearchPhone, setSsearchPhone] = useState("");
   const [RsName, setRsName] = useState(false);
   const [RsPhone, setRsPhone] = useState(false);
+  const [mandobe_id, setmandobe_id] = useState(0);
 
   const [spinner, setspinner] = useState(false);
 
   const [TheSelectedcategory, setTheSelectedcategory] = useState(8);
+  const [TheSelectedpiority, setTheSelectedpiority] = useState("all");
+  const [TheSelectedType, setTheSelectedType] = useState("all");
   const [TheUser, setTheUser] = useState([]);
 
   const { user, isAuthenticated, loading } = useAuth();
@@ -60,7 +66,10 @@ function MyUsers() {
     Saera,
     Scat,
     RsName,
-    RsPhone
+    RsPhone,
+    mandobe_id,
+    Spaiority,
+    SType
   );
 
   const results = isLoading ? false : data.data;
@@ -154,7 +163,13 @@ function MyUsers() {
           "&RsName=" +
           RsName +
           "&RsPhone=" +
-          RsPhone
+          RsPhone +
+          "&mandobe_id=" +
+          mandobe_id +
+          "&Spaiority=" +
+          Spaiority +
+          "&SType=" +
+          SType
       );
     }
   }
@@ -202,7 +217,13 @@ function MyUsers() {
             "&RsName=" +
             RsName +
             "&RsPhone=" +
-            RsPhone
+            RsPhone +
+            "&mandobe_id=" +
+            mandobe_id +
+            "&Spaiority=" +
+            Spaiority +
+            "&SType=" +
+            SType
         );
       }
       alert.show("تم بنجاح", {
@@ -230,6 +251,8 @@ function MyUsers() {
     setScity(TheSelectedCity);
     setSaera(TheSelectedaera);
     setScat(TheSelectedcategory);
+    setSType(TheSelectedType);
+    setSpaiority(TheSelectedpiority);
   }
 
   function phoneS() {
@@ -545,7 +568,7 @@ function MyUsers() {
                                 </button>
                               </div>
 
-                              <div className="col-lg-3">
+                              <div className="col-lg-4">
                                 <div className="form-group">
                                   <label className="form-control-label">
                                     الدولة
@@ -590,7 +613,7 @@ function MyUsers() {
                                 </div>
                               </div>
 
-                              <div className="col-lg-3">
+                              <div className="col-lg-4">
                                 <div className="form-group">
                                   <label className="form-control-label">
                                     المدينة
@@ -629,7 +652,7 @@ function MyUsers() {
                                   </select>
                                 </div>
                               </div>
-                              <div className="col-lg-3">
+                              <div className="col-lg-4">
                                 <div className="form-group">
                                   <label className="form-control-label">
                                     المنطقة
@@ -654,7 +677,7 @@ function MyUsers() {
                                   </select>
                                 </div>
                               </div>
-                              <div className="col-lg-2">
+                              <div className="col-lg-4">
                                 <div className="form-group">
                                   <label className="form-control-label">
                                     الإحتياج
@@ -678,6 +701,49 @@ function MyUsers() {
                                   </select>
                                 </div>
                               </div>
+                              <div className="col-lg-4">
+                                <div className="form-group">
+                                  <label className="form-control-label">
+                                    الحالة
+                                  </label>
+                                  <select
+                                    name="category"
+                                    onChange={(e) => {
+                                      setTheSelectedpiority(e.target.value);
+                                    }}
+                                    class="form-control"
+                                  >
+                                    <option value="all">الكل</option>
+
+                                    <option value="normal">عادي</option>
+
+                                    <option value="critical">حرجة</option>
+                                    <option value="superCritical">
+                                      حرجة جدا
+                                    </option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div className="col-lg-3">
+                                <div className="form-group">
+                                  <label className="form-control-label">
+                                    النوع
+                                  </label>
+                                  <select
+                                    name="category"
+                                    onChange={(e) => {
+                                      setTheSelectedType(e.target.value);
+                                    }}
+                                    class="form-control"
+                                  >
+                                    <option value="all">الكل</option>
+
+                                    <option value="single">فرد</option>
+                                    <option value="family">عائلة</option>
+                                  </select>
+                                </div>
+                              </div>
+
                               <div className="col-lg-1">
                                 <button
                                   class="btn btn-lg btn-primary"

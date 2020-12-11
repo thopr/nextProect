@@ -41,6 +41,9 @@ function GiveNeedyCoubon() {
   const [page, setpage] = useState(1);
   const [Scity, setScity] = useState("جدة");
   const [Saera, setSaera] = useState("all");
+  const [SType, setSType] = useState("all");
+
+  const [Spaiority, setSpaiority] = useState("all");
   const [Scat, setScat] = useState(8);
   const [SsearchName, setSsearchName] = useState("");
   const [SsearchPhone, setSsearchPhone] = useState("");
@@ -52,6 +55,8 @@ function GiveNeedyCoubon() {
 
   const [TheSelectedcategory, setTheSelectedcategory] = useState(8);
   const [TheSelectedhide, setTheSelectedhide] = useState("dont");
+  const [TheSelectedpiority, setTheSelectedpiority] = useState("all");
+  const [TheSelectedType, setTheSelectedType] = useState("all");
 
   const { user, isAuthenticated, loading } = useAuth();
   const [MUuserID, setMUuserID] = useState(0);
@@ -70,7 +75,9 @@ function GiveNeedyCoubon() {
     Scat,
     RsName,
     RsPhone,
-    hide
+    hide,
+    Spaiority,
+    SType
   );
 
   const results = isLoading ? false : data.data;
@@ -233,6 +240,8 @@ function GiveNeedyCoubon() {
     setSaera(TheSelectedaera);
     setScat(TheSelectedcategory);
     sethide(TheSelectedhide);
+    setSType(TheSelectedType);
+    setSpaiority(TheSelectedpiority);
   }
 
   function phoneS() {
@@ -331,7 +340,15 @@ function GiveNeedyCoubon() {
                 "&RsPhone=" +
                 RsPhone +
                 "&hide=" +
-                hide
+                hide +
+                "&Spaiority=" +
+                Spaiority +
+                "&SType=" +
+                SType +
+                "&Spaiority=" +
+                Spaiority +
+                "&SType=" +
+                SType
             );
           }
           setStep(1);
@@ -580,7 +597,7 @@ function GiveNeedyCoubon() {
                                 </button>
                               </div>
 
-                              <div className="col-lg-2">
+                              <div className="col-lg-4">
                                 <div className="form-group">
                                   <label className="form-control-label">
                                     الدولة
@@ -625,7 +642,7 @@ function GiveNeedyCoubon() {
                                 </div>
                               </div>
 
-                              <div className="col-lg-2">
+                              <div className="col-lg-4">
                                 <div className="form-group">
                                   <label className="form-control-label">
                                     المدينة
@@ -664,7 +681,7 @@ function GiveNeedyCoubon() {
                                   </select>
                                 </div>
                               </div>
-                              <div className="col-lg-2">
+                              <div className="col-lg-4">
                                 <div className="form-group">
                                   <label className="form-control-label">
                                     المنطقة
@@ -689,7 +706,7 @@ function GiveNeedyCoubon() {
                                   </select>
                                 </div>
                               </div>
-                              <div className="col-lg-2">
+                              <div className="col-lg-3">
                                 <div className="form-group">
                                   <label className="form-control-label">
                                     الإحتياج
@@ -713,7 +730,7 @@ function GiveNeedyCoubon() {
                                   </select>
                                 </div>
                               </div>
-                              <div className="col-lg-2">
+                              <div className="col-lg-3">
                                 <div className="form-group">
                                   <label className="form-control-label">
                                     إخفاء المصروف لهم
@@ -733,7 +750,49 @@ function GiveNeedyCoubon() {
                                   </select>
                                 </div>
                               </div>
-                              <div className="col-lg-1"></div>
+                              <div className="col-lg-3">
+                                <div className="form-group">
+                                  <label className="form-control-label">
+                                    الحالة
+                                  </label>
+                                  <select
+                                    name="category"
+                                    onChange={(e) => {
+                                      setTheSelectedpiority(e.target.value);
+                                    }}
+                                    class="form-control"
+                                  >
+                                    <option value="all">الكل</option>
+
+                                    <option value="normal">عادي</option>
+
+                                    <option value="critical">حرجة</option>
+                                    <option value="superCritical">
+                                      حرجة جدا
+                                    </option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div className="col-lg-2">
+                                <div className="form-group">
+                                  <label className="form-control-label">
+                                    النوع
+                                  </label>
+                                  <select
+                                    name="category"
+                                    onChange={(e) => {
+                                      setTheSelectedType(e.target.value);
+                                    }}
+                                    class="form-control"
+                                  >
+                                    <option value="all">الكل</option>
+
+                                    <option value="single">فرد</option>
+                                    <option value="family">عائلة</option>
+                                  </select>
+                                </div>
+                              </div>
+
                               <div className="col-lg-1">
                                 <button
                                   class="btn btn-lg btn-primary"
