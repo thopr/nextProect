@@ -1486,7 +1486,7 @@ function Table() {
                                                   Member.Member_Number + "index"
                                                 }
                                                 onChange={(e) => {
-                                                  UpdateMembereName(
+                                                  UpdateMembereNumber(
                                                     Member,
                                                     e.target.value
                                                   );
