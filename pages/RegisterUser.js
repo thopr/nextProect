@@ -28,6 +28,7 @@ function Table() {
       Member_id: 99999999999,
       Member_Name: "",
       Member_img: false,
+      Member_Number: "",
     },
   ]);
 
@@ -418,6 +419,20 @@ function Table() {
     setSelectedMembers(newdata);
   }
 
+  function UpdateMembereNumber(QMember, NewName) {
+    let mydata = SelectedMembers;
+    let newdata = [];
+    for (let index = 0; index < mydata.length; index++) {
+      const element = mydata[index];
+
+      if (element.Member_id == QMember.Member_id) {
+        element.Member_Number = NewName;
+      }
+      newdata.push(element);
+    }
+    setSelectedMembers(newdata);
+  }
+
   let step2 = step;
 
   const token = Cookies.get("token");
@@ -430,6 +445,7 @@ function Table() {
       Member_id: random_id,
       Member_Name: "",
       Member_img: false,
+      Member_Number: "",
     };
 
     mydata.push(newdata);
@@ -1458,44 +1474,75 @@ function Table() {
                                             </div>
                                           </div>
                                           <div className="col-md-5">
+                                            {" "}
                                             <div className="form-group">
                                               <label className="form-control-label">
-                                                صورة الهوية او الإقامة
+                                                رقم الهوية أو الإقامة
                                               </label>
 
-                                              {Member.Member_img ? (
-                                                <>
-                                                  <br />
-                                                  <a href={Member.Member_img}>
-                                                    صورة الهوية
-                                                  </a>
-                                                  <button
-                                                    type="button"
-                                                    class="btn btn-primary mr-2"
-                                                    //style={{ float: "right" }}
-                                                    onClick={() => {
-                                                      removeMember_img(Member);
-                                                    }}
-                                                  >
-                                                    <span class="btn-inner--text">
-                                                      {" "}
-                                                      تعديل
-                                                    </span>
-                                                  </button>
-                                                </>
-                                              ) : (
-                                                <ButtonUploadImage
-                                                  typeImage="thumbnail"
-                                                  onChange={(thumbnail) =>
-                                                    handleThumbnailProduct(
-                                                      thumbnail.target.files[0],
-                                                      Member
-                                                    )
-                                                  }
-                                                />
-                                              )}
+                                              <input
+                                                type="number"
+                                                name={
+                                                  Member.Member_Number + "index"
+                                                }
+                                                onChange={(e) => {
+                                                  UpdateMembereName(
+                                                    Member,
+                                                    e.target.value
+                                                  );
+                                                }}
+                                                value={Member.Member_Number}
+                                                placeholder="رقم الهوية"
+                                                className="form-control"
+                                              />
                                             </div>
                                           </div>
+                                          {false ? (
+                                            <div className="col-md-5">
+                                              <div className="form-group">
+                                                <label className="form-control-label">
+                                                  صورة الهوية او الإقامة
+                                                </label>
+
+                                                {Member.Member_img ? (
+                                                  <>
+                                                    <br />
+                                                    <a href={Member.Member_img}>
+                                                      صورة الهوية
+                                                    </a>
+                                                    <button
+                                                      type="button"
+                                                      class="btn btn-primary mr-2"
+                                                      //style={{ float: "right" }}
+                                                      onClick={() => {
+                                                        removeMember_img(
+                                                          Member
+                                                        );
+                                                      }}
+                                                    >
+                                                      <span class="btn-inner--text">
+                                                        {" "}
+                                                        تعديل
+                                                      </span>
+                                                    </button>
+                                                  </>
+                                                ) : (
+                                                  <ButtonUploadImage
+                                                    typeImage="thumbnail"
+                                                    onChange={(thumbnail) =>
+                                                      handleThumbnailProduct(
+                                                        thumbnail.target
+                                                          .files[0],
+                                                        Member
+                                                      )
+                                                    }
+                                                  />
+                                                )}
+                                              </div>
+                                            </div>
+                                          ) : (
+                                            ""
+                                          )}
                                           <div className="col-md-1">
                                             <br />
                                             <button

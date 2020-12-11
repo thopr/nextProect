@@ -436,7 +436,7 @@ function UserInfo({ id, setuserInfoMode }) {
                                 </th>
 
                                 <th scope="col" data-sort="status">
-                                  صورة الهوية
+                                  رقم الهوية
                                 </th>
                               </tr>
                             </thead>
@@ -446,16 +446,7 @@ function UserInfo({ id, setuserInfoMode }) {
                                   return (
                                     <tr>
                                       <td>{user_members_id.member_name}</td>
-                                      {user_members_id.member_img ? (
-                                        <td>
-                                          <br />
-                                          <a href={user_members_id.member_img}>
-                                            صورة الهوية
-                                          </a>
-                                        </td>
-                                      ) : (
-                                        <td>لا يوجد</td>
-                                      )}
+                                      <td>{user_members_id.member_Number}</td>
                                     </tr>
                                   );
                                 }
