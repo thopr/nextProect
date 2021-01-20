@@ -746,15 +746,12 @@ function Register_User() {
                                       </span>
                                     </td>
 
-                                    <td>
-                                      <input
-                                        type="text"
-                                        onChange={(e) => {
-                                          setOldWoman(e.target.value);
+                                    <td style={{ color: "black" }}>
+                                      <CounterInput
+                                        min={0}
+                                        onCountChange={(count) => {
+                                          setOldWoman(count);
                                         }}
-                                        className="form-control numher-person-type"
-                                        style={{ textAlign: "center" }}
-                                        value={oldWoman}
                                       />
                                     </td>
                                     <td>
@@ -773,16 +770,12 @@ function Register_User() {
                                         رجل مسن
                                       </span>
                                     </td>
-
-                                    <td>
-                                      <input
-                                        type="text"
-                                        onChange={(e) => {
-                                          setOldMan(e.target.value);
+                                    <td style={{ color: "black" }}>
+                                      <CounterInput
+                                        min={0}
+                                        onCountChange={(count) => {
+                                          setOldMan(count);
                                         }}
-                                        className="form-control numher-person-type"
-                                        style={{ textAlign: "center" }}
-                                        value={oldMan}
                                       />
                                     </td>
                                   </tr>
@@ -807,18 +800,15 @@ function Register_User() {
                                         احتياجات خاصة
                                       </span>
                                     </td>
-
-                                    <td>
-                                      <input
-                                        type="text"
-                                        onChange={(e) => {
-                                          setAccibilityPerson(e.target.value);
+                                    <td style={{ color: "black" }}>
+                                      <CounterInput
+                                        min={0}
+                                        onCountChange={(count) => {
+                                          setAccibilityPerson(count);
                                         }}
-                                        className="form-control numher-person-type"
-                                        style={{ textAlign: "center" }}
-                                        value={accibilityPerson}
                                       />
                                     </td>
+
                                     <td>
                                       <img
                                         width={50}
@@ -835,16 +825,12 @@ function Register_User() {
                                         طفل رضيع
                                       </span>
                                     </td>
-
-                                    <td>
-                                      <input
-                                        type="text"
-                                        onChange={(e) => {
-                                          setBaby(e.target.value);
+                                    <td style={{ color: "black" }}>
+                                      <CounterInput
+                                        min={0}
+                                        onCountChange={(count) => {
+                                          setBaby(count);
                                         }}
-                                        className="form-control numher-person-type"
-                                        style={{ textAlign: "center" }}
-                                        value={baby}
                                       />
                                     </td>
                                   </tr>
@@ -857,7 +843,7 @@ function Register_User() {
                                       <img
                                         width={50}
                                         height={50}
-                                        src="/assets/img/icons/empty.png"
+                                        src="/assets/img/icons/orphan_girl.png"
                                       />
                                     </td>
 
@@ -869,23 +855,20 @@ function Register_User() {
                                         بنات أيتام
                                       </span>
                                     </td>
-
-                                    <td>
-                                      <input
-                                        type="text"
-                                        onChange={(e) => {
-                                          setOrphanGirls(e.target.value);
+                                    <td style={{ color: "black" }}>
+                                      <CounterInput
+                                        min={0}
+                                        onCountChange={(count) => {
+                                          setOrphanGirls(count);
                                         }}
-                                        className="form-control numher-person-type"
-                                        style={{ textAlign: "center" }}
-                                        value={orphanGirls}
                                       />
                                     </td>
+
                                     <td>
                                       <img
                                         width={50}
                                         height={50}
-                                        src="/assets/img/icons/empty.png"
+                                        src="/assets/img/icons/orphan_boy.png"
                                       />
                                     </td>
 
@@ -897,16 +880,12 @@ function Register_User() {
                                         أولاد أيتام
                                       </span>
                                     </td>
-
-                                    <td>
-                                      <input
-                                        type="text"
-                                        onChange={(e) => {
-                                          setOrphanBoys(e.target.value);
+                                    <td style={{ color: "black" }}>
+                                      <CounterInput
+                                        min={0}
+                                        onCountChange={(count) => {
+                                          setOrphanBoys(count);
                                         }}
-                                        className="form-control numher-person-type"
-                                        style={{ textAlign: "center" }}
-                                        value={orphanBoys}
                                       />
                                     </td>
                                   </tr>
@@ -919,7 +898,7 @@ function Register_User() {
                                       <img
                                         width={50}
                                         height={50}
-                                        src="/assets/img/icons/empty.png"
+                                        src="/assets/img/icons/woman.png"
                                       />
                                     </td>
 
@@ -931,24 +910,20 @@ function Register_User() {
                                         أرامل
                                       </span>
                                     </td>
-
-                                    <td>
-                                      <input
-                                        type="text"
-                                        onChange={(e) => {
-                                          setWidows(e.target.value);
+                                    <td style={{ color: "black" }}>
+                                      <CounterInput
+                                        min={0}
+                                        onCountChange={(count) => {
+                                          setWidows(count);
                                         }}
-                                        className="form-control numher-person-type"
-                                        style={{ textAlign: "center" }}
-                                        value={widows}
-                                        name="أرامل"
                                       />
                                     </td>
+
                                     <td>
                                       <img
                                         width={50}
                                         height={50}
-                                        src="/assets/img/icons/empty.png"
+                                        src="/assets/img/icons/youth-woman.png"
                                       />
                                     </td>
 
@@ -960,17 +935,12 @@ function Register_User() {
                                         شابات
                                       </span>
                                     </td>
-
-                                    <td>
-                                      <input
-                                        type="text"
-                                        onChange={(e) => {
-                                          setGirls(e.target.value);
+                                    <td style={{ color: "black" }}>
+                                      <CounterInput
+                                        min={0}
+                                        onCountChange={(count) => {
+                                          setGirls(count);
                                         }}
-                                        className="form-control numher-person-type"
-                                        style={{ textAlign: "center" }}
-                                        value={girls}
-                                        name="شابات "
                                       />
                                     </td>
                                   </tr>
@@ -983,7 +953,7 @@ function Register_User() {
                                       <img
                                         width={50}
                                         height={50}
-                                        src="/assets/img/icons/empty.png"
+                                        src="/assets/img/icons/youth.png"
                                       />
                                     </td>
 
@@ -995,19 +965,15 @@ function Register_User() {
                                         شباب
                                       </span>
                                     </td>
-
-                                    <td>
-                                      <input
-                                        type="text"
-                                        onChange={(e) => {
-                                          setGuys(e.target.value);
+                                    <td style={{ color: "black" }}>
+                                      <CounterInput
+                                        min={0}
+                                        onCountChange={(count) => {
+                                          setGuys(count);
                                         }}
-                                        className="form-control numher-person-type"
-                                        style={{ textAlign: "center" }}
-                                        value={guys}
-                                        name="شباب"
                                       />
                                     </td>
+
                                     <td>
                                       <img
                                         width={50}
@@ -1024,17 +990,12 @@ function Register_User() {
                                         بنات
                                       </span>
                                     </td>
-
-                                    <td>
-                                      <input
-                                        type="text"
-                                        onChange={(e) => {
-                                          setgirl(e.target.value);
+                                    <td style={{ color: "black" }}>
+                                      <CounterInput
+                                        min={0}
+                                        onCountChange={(count) => {
+                                          setgirl(count);
                                         }}
-                                        className="form-control numher-person-type"
-                                        style={{ textAlign: "center" }}
-                                        value={girl}
-                                        name="بنات"
                                       />
                                     </td>
                                   </tr>
@@ -1059,19 +1020,15 @@ function Register_User() {
                                         أولاد
                                       </span>
                                     </td>
-
-                                    <td>
-                                      <input
-                                        type="text"
-                                        onChange={(e) => {
-                                          setboy(e.target.value);
+                                    <td style={{ color: "black" }}>
+                                      <CounterInput
+                                        min={0}
+                                        onCountChange={(count) => {
+                                          setboy(count);
                                         }}
-                                        className="form-control numher-person-type"
-                                        style={{ textAlign: "center" }}
-                                        value={boy}
-                                        name="أولاد"
                                       />
                                     </td>
+
                                     <td>
                                       <img
                                         width={50}
@@ -1088,17 +1045,12 @@ function Register_User() {
                                         نساء
                                       </span>
                                     </td>
-
-                                    <td>
-                                      <input
-                                        type="text"
-                                        onChange={(e) => {
-                                          setWomen(e.target.value);
+                                    <td style={{ color: "black" }}>
+                                      <CounterInput
+                                        min={0}
+                                        onCountChange={(count) => {
+                                          setWomen(count);
                                         }}
-                                        className="form-control numher-person-type"
-                                        style={{ textAlign: "center" }}
-                                        value={women}
-                                        name="نساء"
                                       />
                                     </td>
                                   </tr>
@@ -1123,19 +1075,15 @@ function Register_User() {
                                         رجال
                                       </span>
                                     </td>
-
-                                    <td>
-                                      <input
-                                        type="text"
-                                        onChange={(e) => {
-                                          setMen(e.target.value);
+                                    <td style={{ color: "black" }}>
+                                      <CounterInput
+                                        min={0}
+                                        onCountChange={(count) => {
+                                          setMen(count);
                                         }}
-                                        className="form-control numher-person-type"
-                                        style={{ textAlign: "center" }}
-                                        value={men}
-                                        name="رجال"
                                       />
                                     </td>
+
                                     <td colspan="3" />
                                   </tr>
 

@@ -16,6 +16,7 @@
     "axios": "^0.19.2",
     "chart.js": "^2.9.3",
     "chartjs-top-round-bar": "^1.0.1",
+    "file-saver": "^2.0.5",
     "jquery": "^3.5.1",
     "js-cookie": "^2.2.1",
     "next": "latest",
@@ -31,8 +32,10 @@
     "react-loading-skeleton": "^2.1.1",
     "react-select-search": "^2.0.4",
     "react-verification-code-input": "^1.2.6",
+    "react-xlsx-sheet": "^1.0.0",
     "sass": "^1.26.10",
-    "swr": "^0.2.3"
+    "swr": "^0.2.3",
+    "xlsx": "^0.16.9"
   },
   "bit": {
     "env": {},

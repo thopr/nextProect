@@ -559,7 +559,7 @@ function UserInfo({ id, setuserInfoMode }) {
                     }}
                   >
                     <img
-                      src="/assets/img/icons/empty.png"
+                      src="/assets/img/icons/youth.png"
                       height="70px"
                       width="70px"
                     />
@@ -577,7 +577,7 @@ function UserInfo({ id, setuserInfoMode }) {
                     }}
                   >
                     <img
-                      src="/assets/img/icons/empty.png"
+                      src="/assets/img/icons/youth-woman.png"
                       height="70px"
                       width="70px"
                     />
@@ -627,7 +627,7 @@ function UserInfo({ id, setuserInfoMode }) {
                     }}
                   >
                     <img
-                      src="/assets/img/icons/empty.png"
+                      src="/assets/img/icons/woman.png"
                       height="70px"
                       width="70px"
                     />
@@ -643,7 +643,7 @@ function UserInfo({ id, setuserInfoMode }) {
                     }}
                   >
                     <img
-                      src="/assets/img/icons/empty.png"
+                      src="/assets/img/icons/orphan_boy.png"
                       height="70px"
                       width="70px"
                     />
@@ -661,7 +661,7 @@ function UserInfo({ id, setuserInfoMode }) {
                     }}
                   >
                     <img
-                      src="/assets/img/icons/empty.png"
+                      src="/assets/img/icons/orphan_girl.png"
                       height="70px"
                       width="70px"
                     />
