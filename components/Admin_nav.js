@@ -269,7 +269,7 @@ function Admin_nav() {
                         }
                       >
                         <i className="ni ni-briefcase-24 text-primary " />
-                        <span className="nav-link-text">جميع المندوبين</span>
+                        <span className="nav-link-text">جميع الجمعيات</span>
                       </a>
                     </Link>
                   </li>
@@ -288,7 +288,7 @@ function Admin_nav() {
                         }
                       >
                         <i className="ni ni-briefcase-24 " />
-                        <span className="nav-link-text">تسجيل مندوب</span>
+                        <span className="nav-link-text">تسجيل جمعية</span>
                       </a>
                     </Link>
                   </li>
@@ -307,7 +307,7 @@ function Admin_nav() {
                         }
                       >
                         <i className="ni ni-briefcase-24 " />
-                        <span className="nav-link-text">إعتماد مندوب</span>
+                        <span className="nav-link-text">إعتماد جمعية</span>
                       </a>
                     </Link>
                   </li>
@@ -496,7 +496,7 @@ function Admin_nav() {
                     </div>
                     <div className="row">
                       <div style={{ color: "#4CAF50" }} className="col-auto">
-                        مندوب
+                        جمعية
                       </div>
                       <div className="col-auto">
                         {" "}

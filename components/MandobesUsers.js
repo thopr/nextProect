@@ -473,7 +473,7 @@ function MandobesUsers({ mandobe_id, setusersInfoMode, CurrenMandomeName }) {
                 <div class="card">
                   <div class="card-header bg-transparent">
                     <h3 class="mb-0">
-                      المستفيدين للمندوب : {CurrenMandomeName}
+                      المستفيدين للجمعية : {CurrenMandomeName}
                     </h3>
                     <div style={{ float: "right" }}>
                       <button

@@ -385,7 +385,7 @@ function Mandobes() {
                   <div class=" col ">
                     <div class="card">
                       <div class="card-header bg-transparent">
-                        <h3 class="mb-0">المندوبين</h3>
+                        <h3 class="mb-0">الجمعيات</h3>
                       </div>
 
                       <div class="card-body">
@@ -596,7 +596,7 @@ function Mandobes() {
                                       className="sort"
                                       data-sort="name"
                                     >
-                                      اسم المندوب{" "}
+                                      الإسم{" "}
                                     </th>
 
                                     <th

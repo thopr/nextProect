@@ -105,15 +105,7 @@ function Table() {
 
     if (FirstName == "") {
       checke = false;
-      alert.show("الرجاء كتابة الإسم الأول", {
-        timeout: 2000,
-        type: "error",
-      });
-    }
-
-    if (LastName == "") {
-      checke = false;
-      alert.show("الرجاء كتابة الإسم الاخير", {
+      alert.show("الرجاء كتابة الإسم ", {
         timeout: 2000,
         type: "error",
       });
@@ -189,7 +181,7 @@ function Table() {
                 <div class=" col ">
                   <div class="card">
                     <div class="card-header bg-transparent">
-                      <h3 class="mb-0">تسجيل مندوب جديد</h3>
+                      <h3 class="mb-0">تسجيل جمعية جديدة</h3>
                     </div>
                     <div class="card-body">
                       {/* Light table */}
@@ -290,7 +282,6 @@ function Table() {
                                 }}
                                 class="form-control"
                               >
-                                <option value="0">الكل</option>
                                 {aeras.length > 0
                                   ? aeras.map((aeras, index) => {
                                       return (
@@ -304,13 +295,13 @@ function Table() {
                             </div>
                           </div>
                           <h6 className="heading-small text-muted mb-4">
-                            معلومات المندوب
+                            معلومات الجمعية
                           </h6>
 
-                          <div className="col-lg-6">
+                          <div className="col-lg-12">
                             <div className="form-group">
                               <label className="form-control-label">
-                                الإسم الأول
+                                الإسم
                               </label>
                               <input
                                 type="text"
@@ -320,24 +311,7 @@ function Table() {
                                 }}
                                 value={FirstName}
                                 className="form-control"
-                                placeholder="الإسم الأول"
-                              />
-                            </div>
-                          </div>
-                          <div className="col-lg-6">
-                            <div className="form-group">
-                              <label className="form-control-label">
-                                الإسم الإخير
-                              </label>
-                              <input
-                                type="text"
-                                name="LastName"
-                                onChange={(e) => {
-                                  setLastName(e.target.value);
-                                }}
-                                value={LastName}
-                                className="form-control"
-                                placeholder="الإسم الإخير"
+                                placeholder="الإسم "
                               />
                             </div>
                           </div>

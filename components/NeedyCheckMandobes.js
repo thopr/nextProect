@@ -51,7 +51,7 @@ function NeedyCheckMandobes({
               }}
               class="dropdown-item"
             >
-              تعديل بيانات المندوب
+              تعديل بيانات الجمعية
             </a>
 
             {data.approvalStatus == 1 ? (
@@ -61,7 +61,7 @@ function NeedyCheckMandobes({
                 }}
                 class="dropdown-item"
               >
-                تعطيل حساب المندوب
+                تعطيل حساب الجمعية
               </a>
             ) : (
               <a
@@ -70,7 +70,7 @@ function NeedyCheckMandobes({
                 }}
                 class="dropdown-item"
               >
-                تفعيل حساب المندوب
+                تفعيل حساب الجمعية
               </a>
             )}
           </div>

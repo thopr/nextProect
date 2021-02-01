@@ -206,7 +206,7 @@ function EditMandobe({ TheUser, updatesetstep }) {
             display: "inline",
           }}
         >
-          العودة الى قائمة المندوبين
+          العودة الى قائمة الجمعيات
         </h2>
       </div>
       <br />
@@ -320,11 +320,11 @@ function EditMandobe({ TheUser, updatesetstep }) {
               </select>
             </div>
           </div>
-          <h6 className="heading-small text-muted mb-4">معلومات المندوب</h6>
+          <h6 className="heading-small text-muted mb-4">معلومات الجمعية</h6>
 
-          <div className="col-lg-6">
+          <div className="col-lg-12">
             <div className="form-group">
-              <label className="form-control-label">الإسم الأول</label>
+              <label className="form-control-label">الإسم </label>
               <input
                 type="text"
                 name="FirstName"
@@ -333,22 +333,7 @@ function EditMandobe({ TheUser, updatesetstep }) {
                 }}
                 value={FirstName}
                 className="form-control"
-                placeholder="الإسم الأول"
-              />
-            </div>
-          </div>
-          <div className="col-lg-6">
-            <div className="form-group">
-              <label className="form-control-label">الإسم الإخير</label>
-              <input
-                type="text"
-                name="LastName"
-                onChange={(e) => {
-                  setLastName(e.target.value);
-                }}
-                value={LastName}
-                className="form-control"
-                placeholder="الإسم الإخير"
+                placeholder="الإسم "
               />
             </div>
           </div>
