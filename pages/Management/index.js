@@ -82,7 +82,7 @@ function Admin() {
                           onChange={(e) => setemail(e.target.value)}
                           class="form-control"
                           placeholder="الإيميل"
-                          type="email"
+                          type="text"
                         />
                       </div>
                     </div>

@@ -27,6 +27,9 @@ function company() {
   console.log(data);
   const [branch_id, setBranch_id] = useState();
   const [BracnhCode, setBracnhCode] = useState();
+  const [bphone, setbphone] = useState();
+  const [bname, setbname] = useState();
+
   const [Branch, setBranch] = useState();
   const [edit, setedit] = useState(false);
 
@@ -51,8 +54,6 @@ function company() {
     localStorage.CurrentCity = "";
     return (
       <>
-        <h2>{results[0].company_name}</h2>
-
         {choose == "branches" ? (
           <div>
             <div style={{ float: "right" }}>
@@ -95,7 +96,7 @@ function company() {
                             setnewCompany(true);
                             setChoose("branches");
                             setBranch(branch);
-                            setBranchname(" > " + branch.branch_name);
+                            setBranchname(" " + branch.branch_name);
                             setcompname(branch.company_name);
 
                             // event.stopPropagation();
@@ -113,8 +114,10 @@ function company() {
                             setBranch_id(branch.id);
                             setBracnhCode(branch.BracnhCode);
                             setChoose("coubons");
-                            setBranchname(" > " + branch.branch_name);
+                            setBranchname("  " + branch.branch_name);
                             setcompname(branch.company_name);
+                            setbphone(branch.phone);
+                            setbname(branch.firstName + " " + branch.lastName);
 
                             // setCompany(comp.branches);
                           }}
@@ -165,7 +168,7 @@ function company() {
                             setnewCompany(true);
                             setChoose("branches");
                             setBranch(branch);
-                            setBranchname(" > " + branch.branch_name);
+                            setBranchname("  " + branch.branch_name);
                             setcompname(branch.company_name);
 
                             // event.stopPropagation();
@@ -183,8 +186,10 @@ function company() {
                             setBracnhCode(branch.BracnhCode);
 
                             setChoose("coubons");
-                            setBranchname(" > " + branch.branch_name);
+                            setBranchname("  " + branch.branch_name);
                             setcompname(branch.company_name);
+                            setbphone(branch.phone);
+                            setbname(branch.firstName + " " + branch.lastName);
                           }}
                         >
                           <div
@@ -252,7 +257,6 @@ function company() {
             <div className="container-fluid mt--6">
               {choose == "coubons" ? (
                 <>
-                  <h1>strokeDashoffset</h1>
                   <BranchCoubonTable
                     branch_id={branch_id}
                     BracnhCode={BracnhCode}
@@ -260,6 +264,10 @@ function company() {
                     Branchname={Branchname}
                     setChoose={changeChoose}
                     listOfBranches={results}
+                    FullDesc={results[0].FullDesc}
+                    logo={results[0].logo}
+                    bname={bname}
+                    bphone={bphone}
                   />
                 </>
               ) : (
@@ -286,6 +294,39 @@ function company() {
                       </div>
                       {newCompany == false ? (
                         <div className="card-body">
+                          {results ? (
+                            <div
+                              style={{
+                                backgroundColor: "#f4f0f0",
+                                borderRadius: "20px",
+
+                                padding: "10px",
+                                marginBottom: "5%",
+                              }}
+                              className="row"
+                            >
+                              <div className="col-3">
+                                <img
+                                  src={results[0].logo}
+                                  style={{
+                                    borderRadius: "8px",
+                                  }}
+                                  width="200"
+                                  height="200"
+                                />
+                              </div>
+                              <div className="col-9">
+                                <br />
+                                <h1 style={{ color: "#234B55" }}>
+                                  {results[0].company_name}
+                                </h1>
+                                <br />
+                                <p>{results[0].FullDesc}</p>
+                              </div>
+                            </div>
+                          ) : (
+                            ""
+                          )}
                           {results ? (
                             results == "No_data" ? (
                               <div style={{ float: "right" }}>

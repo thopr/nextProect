@@ -22,6 +22,10 @@ const BranchCoubonTable = ({
   Branchname,
   setChoose,
   listOfBranches,
+  FullDesc,
+  logo,
+  bname,
+  bphone,
 }) => {
   const router = useRouter();
   const alert = useAlert();
@@ -179,7 +183,6 @@ const BranchCoubonTable = ({
         <div className=" col ">
           <div className="card">
             <div className="card-header bg-transparent">
-              <h2> {companyName + Branchname}</h2>
               {newCompany == false ? (
                 <div style={{ float: "right" }}>
                   <button
@@ -206,6 +209,42 @@ const BranchCoubonTable = ({
             {newCompany == false ? (
               <>
                 <div className="card-body">
+                  <div
+                    style={{
+                      backgroundColor: "#f4f0f0",
+                      borderRadius: "20px",
+
+                      padding: "10px",
+                      marginBottom: "5%",
+                    }}
+                    className="row"
+                  >
+                    <div className="col-3">
+                      <img
+                        src={logo}
+                        style={{
+                          borderRadius: "8px",
+                        }}
+                        width="200"
+                        height="200"
+                      />
+                    </div>
+                    <div className="col-6">
+                      <br />
+                      <h1 style={{ color: "#234B55" }}>
+                        {companyName} ({Branchname})
+                      </h1>
+                      <br />
+                      <p>{FullDesc}</p>
+                    </div>
+                    <div className="col-3">
+                      <br />
+                      <h1 style={{ color: "#234B55" }}> مسؤول الفرع</h1>
+                      <br />
+                      <p>الإسم: {bname}</p>
+                      <p>الجوال: {bphone}</p>
+                    </div>
+                  </div>
                   <div style={{ float: "left" }}>
                     <button
                       onClick={() => {
