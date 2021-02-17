@@ -40,7 +40,7 @@ function NewCoubonForm({
     console.log(formdata);
 
     api
-      .post("rabwa/newCoubon", formdata)
+      .post("api/newCoubon", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

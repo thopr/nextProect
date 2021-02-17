@@ -33,7 +33,7 @@ function NewCategoryForm({
     setspinner(true);
 
     api
-      .post("rabwa/NewCategory", formdata)
+      .post("api/NewCategory", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

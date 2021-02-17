@@ -23,7 +23,7 @@ function Add_Contery({ GoBackAndTriggerMutation }) {
     console.log(formdata);
 
     api
-      .post("rabwa/Add_Contery", formdata)
+      .post("api/Add_Contery", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

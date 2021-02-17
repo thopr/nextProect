@@ -11,7 +11,7 @@ function Dash() {
   // const [showSkeleton, setshowSkeleton] = useState();
 
   const { data: { data: tests } = {}, isValidating } = useSWR(
-    loading ? false : "rabwa/test",
+    loading ? false : "api/test",
     api.post,
     {
       // refreshInterval: 1000,
@@ -25,7 +25,7 @@ function Dash() {
 
     if (!loading) {
       setshowSkeleton(true);
-      api.post("rabwa/test", { di: "d" }).then((res) => {
+      api.post("api/test", { di: "d" }).then((res) => {
         settests(res.data);
         setshowSkeleton(false);
       });

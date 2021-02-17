@@ -93,11 +93,12 @@ function EditMandobe({ TheUser, updatesetstep }) {
   }
 
   function mysubmit() {
+    
     let data = {
       TheSelectedCity,
       TheSelectedaera,
       FirstName,
-      LastName,
+      LastName:"",
       email,
       phone,
 
@@ -120,13 +121,7 @@ function EditMandobe({ TheUser, updatesetstep }) {
       });
     }
 
-    if (LastName == "") {
-      checke = false;
-      alert.show("الرجاء كتابة الإسم الاخير", {
-        timeout: 2000,
-        type: "error",
-      });
-    }
+
 
     if (phone == "") {
       checke = false;
@@ -136,10 +131,12 @@ function EditMandobe({ TheUser, updatesetstep }) {
       });
     }
 
+
+
     setspinner(true);
     if (checke) {
       api
-        .post("rabwa/UpdateMandobe", data)
+        .post("api/UpdateMandobe", data)
         .then((res) => {
           setspinner(false);
           console.log(res.data);

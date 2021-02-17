@@ -86,8 +86,8 @@ function GiveNeedyCoubon() {
       theUserid,
     };
     console.log(mydd);
-    api.post("rabwa/ApproveMandobe", mydd).then((res) => {
-      mutate("rabwa/GetApproveMandobes");
+    api.post("api/ApproveMandobe", mydd).then((res) => {
+      mutate("api/GetApproveMandobes");
       alert.show("تم بنجاح", {
         timeout: 2000,
         type: "success",
@@ -104,8 +104,8 @@ function GiveNeedyCoubon() {
       theUserid,
     };
     console.log(mydd);
-    api.post("rabwa/ApproveMandobe", mydd).then((res) => {
-      mutate("rabwa/GetApproveMandobes");
+    api.post("api/ApproveMandobe", mydd).then((res) => {
+      mutate("api/GetApproveMandobes");
       alert.show("تم بنجاح", {
         timeout: 2000,
         type: "success",

@@ -326,7 +326,7 @@ function UserInfo({ id, setuserInfoMode }) {
       EmebeberNumber,
     };
     console.log(mydd);
-    api.post("rabwa/UpdateUderIDS", mydd).then((res) => {
+    api.post("api/UpdateUderIDS", mydd).then((res) => {
       setpageup(pageup + 1);
       alert.show("تم بنجاح", {
         timeout: 2000,

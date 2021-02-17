@@ -126,10 +126,10 @@ function MandobesUsers({ mandobe_id, setusersInfoMode, CurrenMandomeName }) {
   function updatesetstep(thes) {
     setStep(thes);
     if (request == "firstTime") {
-      mutate("rabwa/GetMandobUsers?mandobe_id=" + mID);
+      mutate("api/GetMandobUsers?mandobe_id=" + mID);
     } else {
       mutate(
-        "rabwa/OrderGetMandobUsers?page=" +
+        "api/OrderGetMandobUsers?page=" +
           page +
           "&name=" +
           name +
@@ -171,12 +171,12 @@ function MandobesUsers({ mandobe_id, setusersInfoMode, CurrenMandomeName }) {
       theUserid,
     };
     console.log(mydd);
-    api.post("rabwa/ApproveUser", mydd).then((res) => {
+    api.post("api/ApproveUser", mydd).then((res) => {
       if (request == "firstTime") {
-        mutate("rabwa/GetMandobUsers?mandobe_id=" + mID);
+        mutate("api/GetMandobUsers?mandobe_id=" + mID);
       } else {
         mutate(
-          "rabwa/OrderGetMandobUsers?page=" +
+          "api/OrderGetMandobUsers?page=" +
             page +
             "&name=" +
             name +
@@ -277,7 +277,7 @@ function MandobesUsers({ mandobe_id, setusersInfoMode, CurrenMandomeName }) {
   function myDistributeCoupons(pool, coubonName, list) {
     setspinner(true);
     api
-      .post("rabwa/DistributeCoupons", { pool, coubonName, list })
+      .post("api/DistributeCoupons", { pool, coubonName, list })
       .then((res) => {
         setspinner(false);
         console.log(res.data);

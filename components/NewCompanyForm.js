@@ -141,7 +141,7 @@ function NewCompanyForm({ changenewCompany }) {
     setspinner(true);
 
     api
-      .post("rabwa/newCompany", formdata)
+      .post("api/newCompany", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

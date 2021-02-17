@@ -261,7 +261,7 @@ function Table() {
     setspinner(true);
     if (checke) {
       api
-        .post("rabwa/CreatNewUser", data)
+        .post("api/CreatNewUser", data)
         .then((res) => {
           setspinner(false);
           console.log(res.data);

@@ -71,7 +71,7 @@ const BranchCoubonTable = ({
   const [Company, setCompany] = useState([]);
 
   function GoBackAndTriggerMutation() {
-    //mutate("rabwa/GetCouponsBybranch?branch_id=" + branch_id);
+    //mutate("api/GetCouponsBybranch?branch_id=" + branch_id);
     setuppage(uppage + "q");
     setedit(false);
     setnewCompany(false);
@@ -112,7 +112,7 @@ const BranchCoubonTable = ({
       Section_id,
       coubonName,
     };
-    api.post("rabwa/UpdateCoubontName", dd).then((res) => {
+    api.post("api/UpdateCoubontName", dd).then((res) => {
       console.log(res.data);
       alert.show("تم بنجاح", {
         timeout: 2000,
@@ -129,7 +129,7 @@ const BranchCoubonTable = ({
     let dd = {
       data: data,
     };
-    api.post("rabwa/ChangeCoubonBranches", dd).then((res) => {
+    api.post("api/ChangeCoubonBranches", dd).then((res) => {
       console.log(res.data);
       alert.show("تم بنجاح", {
         timeout: 2000,
@@ -140,7 +140,7 @@ const BranchCoubonTable = ({
   }
   async function openModal(ModalData) {
     await api
-      .get("rabwa/GetCouponBranches?Section_id=" + ModalData)
+      .get("api/GetCouponBranches?Section_id=" + ModalData)
       .then((res) => {
         let theCouponBranches = res.data;
         let favorite = [];

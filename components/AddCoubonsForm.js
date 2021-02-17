@@ -39,7 +39,7 @@ function AddCoubonsForm({
     console.log(formdata);
 
     api
-      .post("rabwa/AddCoubons", formdata)
+      .post("api/AddCoubons", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

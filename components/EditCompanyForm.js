@@ -32,7 +32,7 @@ function EditCompanyForm({ changenewCompany, comp, GoBackAndTriggerMutation }) {
     setspinner(true);
 
     api
-      .post("rabwa/UpdateCompany", formdata)
+      .post("api/UpdateCompany", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

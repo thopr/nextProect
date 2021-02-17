@@ -51,7 +51,7 @@ const BranchCoubonTable = ({
   const [resOver, setresOver] = useState([]);
 
   function GoBackAndTriggerMutation() {
-    mutate("rabwa/GetCouponsBybranch?Id=" + branch_id + "&getType=branch");
+    mutate("api/GetCouponsBybranch?Id=" + branch_id + "&getType=branch");
 
     setedit(false);
     setnewCompany(false);

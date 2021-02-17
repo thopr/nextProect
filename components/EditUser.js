@@ -244,7 +244,7 @@ function EditUser({ TheUser, updatesetstep }) {
     setspinner(true);
     if (checke) {
       api
-        .post("rabwa/UpdateUser", data)
+        .post("api/UpdateUser", data)
         .then((res) => {
           setspinner(false);
           console.log(res.data);

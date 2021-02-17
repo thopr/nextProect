@@ -137,12 +137,12 @@ function Mandobes() {
       theUserid,
     };
     console.log(mydd);
-    api.post("rabwa/ApproveMandobe", mydd).then((res) => {
+    api.post("api/ApproveMandobe", mydd).then((res) => {
       if (request == "firstTime") {
-        mutate("rabwa/GetMandobes");
+        mutate("api/GetMandobes");
       } else {
         mutate(
-          "rabwa/OrderGetMandobes?page=" +
+          "api/OrderGetMandobes?page=" +
             page +
             "&name=" +
             name +

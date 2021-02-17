@@ -54,7 +54,7 @@ function CCA() {
   const showSkeleton = isLoading || loading;
 
   function GoBackAndTriggerMutation() {
-    // mutate("rabwa/GetCategories?pageup=" + pageup);
+    // mutate("api/GetCategories?pageup=" + pageup);
 
     setpageup(pageup + 1);
     setfirstTime(true);
@@ -70,7 +70,7 @@ function CCA() {
     let formdata = { id: Service_id };
 
     api
-      .post("rabwa/Delete_area", formdata)
+      .post("api/Delete_area", formdata)
       .then((res) => {
         console.log(res.data);
 
@@ -92,7 +92,7 @@ function CCA() {
     let formdata = { id: Service_id };
 
     api
-      .post("rabwa/Delete_City", formdata)
+      .post("api/Delete_City", formdata)
       .then((res) => {
         console.log(res.data);
 
@@ -114,7 +114,7 @@ function CCA() {
     let formdata = { id: id };
 
     api
-      .post("rabwa/Delete_Contery", formdata)
+      .post("api/Delete_Contery", formdata)
       .then((res) => {
         console.log(res.data);
 

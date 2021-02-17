@@ -27,7 +27,7 @@ function Add_City({ GoBackAndTriggerMutation, Parent_id, setStep }) {
     console.log(formdata);
 
     api
-      .post("rabwa/Add_City", formdata)
+      .post("api/Add_City", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

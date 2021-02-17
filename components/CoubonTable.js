@@ -29,7 +29,7 @@ const CoubonTable = ({
   /*
   useEffect(() => {
     /* mutate(
-      "rabwa/GetCouponsByBracnhCat?Branchid=" +
+      "api/GetCouponsByBracnhCat?Branchid=" +
         Branchid +
         "&Categoryid=" +
         Categoryid

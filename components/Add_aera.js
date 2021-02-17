@@ -29,7 +29,7 @@ function Add_aera({ GoBackAndTriggerMutation, Parent_id }) {
     console.log(formdata);
 
     api
-      .post("rabwa/Add_aera", formdata)
+      .post("api/Add_aera", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

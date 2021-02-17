@@ -20,9 +20,10 @@ export const AuthProvider = ({ children }) => {
         console.log("Got a token in the cookies, let's see if it is valid");
         api.defaults.headers.Authorization = `Bearer ${token}`;
         await api
-          .post("jwt-auth/v1/token/validate")
+          .post("api/checkToken")
           .then((res) => {
             data = res;
+            console.log(data);
           })
           .catch((err) => {
             Cookies.remove("token");
@@ -39,7 +40,7 @@ export const AuthProvider = ({ children }) => {
 
             Router.push("/Management");
           });
-        //  const { data: data } = await api.post("jwt-auth/v1/token/validate");
+        //  const { data: data } = await api.post("api/checkToken");
         if (data) {
           console.log("old token is valid");
           setUser({
@@ -61,14 +62,14 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const Sendcond = async (phone) => {
-    let tempres = await api.get("rabwa/getUserCode?phone=" + phone, {});
+    let tempres = await api.get("api/getUserCode?phone=" + phone, {});
 
     return tempres;
   };
 
   const phoneLogin = async (phone, code) => {
     const { data: data } = await api.get(
-      "rabwa/singUserIN?phone=" + phone + "&code=" + code,
+      "api/singUserIN?phone=" + phone + "&code=" + code,
       {}
     );
 
@@ -113,8 +114,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const login = async (username, password) => {
-    const { data: data } = await api.post("jwt-auth/v1/token", {
-      username,
+    const { data: data } = await api.post("api/login", {
+      email:username,
       password,
     });
     if (data) {

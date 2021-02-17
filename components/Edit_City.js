@@ -27,7 +27,7 @@ function Edit_City({ GoBackAndTriggerMutation, Service }) {
     console.log(formdata);
 
     api
-      .post("rabwa/Edit_City", formdata)
+      .post("api/Edit_City", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

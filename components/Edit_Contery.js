@@ -28,7 +28,7 @@ function Edit_Contery({ GoBackAndTriggerMutation, Category }) {
     console.log(formdata);
 
     api
-      .post("rabwa/Edit_Contery", formdata)
+      .post("api/Edit_Contery", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

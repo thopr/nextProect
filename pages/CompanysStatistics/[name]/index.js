@@ -190,7 +190,7 @@ function company() {
     setedit(false);
   }
   function GoBackAndTriggerMutation() {
-    mutate("rabwa/CompanysStatistic?name=" + name);
+    mutate("api/CompanysStatistic?name=" + name);
 
     setnewCompany(false);
     setedit(false);

@@ -16,7 +16,7 @@ import api from "../services/Api";
 import Footer from "../components/Footer";
 import NeedyCheckUsers from "../components/NeedyCheckUsers";
 import NeedyQuantity from "../components/NeedyQuantity";
-import { Getuserss2, UserStatistics } from "../services/api_get";
+import { Getuserss2 } from "../services/api_get";
 import Skeleton from "react-loading-skeleton";
 import useAuth, { ProtectRoute } from "../contexts/auth.js";
 import { useAlert } from "react-alert";
@@ -62,16 +62,7 @@ function Users() {
   const { user, isAuthenticated, loading } = useAuth();
   const [MUuserID, setMUuserID] = useState(0);
 
-  const {
-    UserStatisticsData,
-    UserStatisticsisLoading,
-    UserStatisticsisError,
-  } = UserStatistics(MUuserID);
 
-  const UserStatisticsresults =
-    UserStatisticsData == false ? false : UserStatisticsData;
-
-  const showSkeleton2 = UserStatisticsisLoading || loading;
 
   const { data, isLoading, isError } = Getuserss2(
     request,
@@ -113,7 +104,6 @@ function Users() {
   const [categories, setcategories] = useState([]);
 
   const [firstTime, setfirstTime] = useState(true);
-  const [newState, setnewState] = useState(true);
   const [statAll, setstatAll] = useState([]);
 
   const [list, updateList] = useState([]);
@@ -124,109 +114,7 @@ function Users() {
     setmodalType("cards");
   }
 
-  if (UserStatisticsresults && newState) {
-    let testState = UserStatisticsresults.data;
 
-    let TheYear = testState.theYear;
-    setstatAll(testState.All);
-    let months = TheYear.months;
-
-    setPieCartDataNumbers({
-      labels: ["المرسلة", "المستخدمة"],
-      datasets: [
-        {
-          data: [TheYear.sentTotalCount, TheYear.usedTotalCount],
-          backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-          hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-        },
-      ],
-    });
-
-    setPieCartDataMoney({
-      labels: ["المرسلة", "المستخدمة"],
-      datasets: [
-        {
-          data: [TheYear.sentTotal, TheYear.usedTotal],
-          backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-          hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-        },
-      ],
-    });
-    setBarChartDataNumbers({
-      labels: [
-        "يناير",
-        "فبراير",
-        "مارس",
-        "أبريل",
-        "مايو",
-        "يونيو",
-        "يوليو",
-        "أغسطس",
-        "سبتمبر",
-        "أكتوبر",
-        "نوفمبر",
-        "ديسمبر",
-      ],
-      datasets: [
-        {
-          label: "الكوبونات المصروفة السنة الحالية",
-          backgroundColor: "#42A5F5",
-          data: [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            months.JulyTotalCount,
-            months.AugustTotalCount,
-            0,
-            0,
-            0,
-            0,
-          ],
-        },
-      ],
-    });
-
-    setBarChartDataMoney({
-      labels: [
-        "يناير",
-        "فبراير",
-        "مارس",
-        "أبريل",
-        "مايو",
-        "يونيو",
-        "يوليو",
-        "أغسطس",
-        "سبتمبر",
-        "أكتوبر",
-        "نوفمبر",
-        "ديسمبر",
-      ],
-      datasets: [
-        {
-          label: "الكوبونات المصروفة السنة الحالية",
-          backgroundColor: "#42A5F5",
-          data: [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            months.JulyTotal,
-            months.AugustTotal,
-            0,
-            0,
-            0,
-            0,
-          ],
-        },
-      ],
-    });
-    setnewState(false);
-  }
 
   if (firstTime && numberOfPages) {
     setCCAs(results.options.CCAs);
@@ -256,7 +144,7 @@ function Users() {
 
   function updateUserMandobe(zzuser_id) {
     let data = { user_id: zzuser_id, NewMandobe_id: NewMandobe_id };
-    api.post("rabwa/updateUserMandobe", data).then((res) => {
+    api.post("api/updateUserMandobe", data).then((res) => {
       console.log(res.data);
 
       if (res.data > 0) {
@@ -266,10 +154,10 @@ function Users() {
         });
 
         if (request == "firstTime") {
-          mutate("rabwa/Getuserss2");
+          mutate("api/Getuserss2");
         } else {
           mutate(
-            "rabwa/OrderGetuserss2?page=" +
+            "api/OrderGetuserss2?page=" +
               page +
               "&name=" +
               name +
@@ -311,10 +199,10 @@ function Users() {
   function updatesetstep(thes) {
     setStep(thes);
     if (request == "firstTime") {
-      mutate("rabwa/Getuserss2");
+      mutate("api/Getuserss2");
     } else {
       mutate(
-        "rabwa/OrderGetuserss2?page=" +
+        "api/OrderGetuserss2?page=" +
           page +
           "&name=" +
           name +
@@ -360,12 +248,12 @@ function Users() {
       theUserid,
     };
     console.log(mydd);
-    api.post("rabwa/ApproveUser", mydd).then((res) => {
+    api.post("api/ApproveUser", mydd).then((res) => {
       if (request == "firstTime") {
-        mutate("rabwa/Getuserss2");
+        mutate("api/Getuserss2");
       } else {
         mutate(
-          "rabwa/OrderGetuserss2?page=" +
+          "api/OrderGetuserss2?page=" +
             page +
             "&name=" +
             name +
@@ -473,7 +361,7 @@ function Users() {
   function myDistributeCoupons(pool, coubonName, list) {
     setspinner(true);
     api
-      .post("rabwa/DistributeCoupons", { pool, coubonName, list })
+      .post("api/DistributeCoupons", { pool, coubonName, list })
       .then((res) => {
         setspinner(false);
         console.log(res.data);
@@ -547,7 +435,6 @@ function Users() {
 
   function openModal(myuserData, type) {
     if (type == "stats") {
-      // setnewState(true);
 
       let tempUserID = myuserData.user_id;
       setMUuserID(tempUserID);
@@ -1047,6 +934,7 @@ function Users() {
                                           class="fa fa-arrow-up"
                                           aria-hidden="true"
                                         ></i>
+                                        
                                       ) : (
                                         <i
                                           class="fa fa-arrow-down"

@@ -77,7 +77,7 @@ function NewBranchForm({
     setspinner(true);
 
     api
-      .post("rabwa/newBranch", formdata)
+      .post("api/newBranch", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

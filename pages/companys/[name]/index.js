@@ -42,7 +42,7 @@ function company() {
     setedit(false);
   }
   function GoBackAndTriggerMutation() {
-    mutate("rabwa/getCompany?name=" + name);
+    mutate("api/getCompany?name=" + name);
 
     setnewCompany(false);
     setedit(false);

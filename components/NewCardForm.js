@@ -69,7 +69,7 @@ function NewCardForm({ user_id, username, GoBackAndTriggerMutation }) {
     console.log(formdata);
 
     api
-      .post("rabwa/newUserCard", formdata)
+      .post("api/newUserCard", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

@@ -71,7 +71,7 @@ function UpdateProfileForm() {
     console.log(formdata);
 
     api
-      .post("rabwa/UpdateUserProfile", formdata)
+      .post("api/UpdateUserProfile", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

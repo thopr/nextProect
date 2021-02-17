@@ -10,7 +10,7 @@ function api_get() {
 export function getCompany(name) {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/getCompany?name=" + name,
+    loading ? false : "api/getCompany?name=" + name,
     api.get
   );
   return {
@@ -25,7 +25,7 @@ export function getSponsors(phone, getType) {
   const { data, error } = useSWR(
     loading
       ? false
-      : "rabwa/getSponsors?phone=" + phone + "&getType=" + getType,
+      : "api/getSponsors?phone=" + phone + "&getType=" + getType,
     api.get
   );
   return {
@@ -38,7 +38,7 @@ export function getSponsors(phone, getType) {
 export function GetFullCCAs(pageup) {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/GetFullCCAs?pageup=" + pageup,
+    loading ? false : "api/GetFullCCAs?pageup=" + pageup,
     api.get
   );
   return {
@@ -51,7 +51,7 @@ export function GetFullCCAs(pageup) {
 export function GetAllMandobes() {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/GetAllMandobes",
+    loading ? false : "api/GetAllMandobes",
     api.get
   );
   return {
@@ -63,7 +63,7 @@ export function GetAllMandobes() {
 
 export function GetC() {
   const { loading } = useAuth();
-  const { data, error } = useSWR(loading ? false : "rabwa/GetC", api.get);
+  const { data, error } = useSWR(loading ? false : "api/GetC", api.get);
   return {
     data: data,
     isLoading: !error && !data,
@@ -74,7 +74,7 @@ export function GetC() {
 export function CompanysStatistic(name) {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/CompanysStatistic?name=" + name,
+    loading ? false : "api/CompanysStatistic?name=" + name,
     api.get
   );
   return {
@@ -89,7 +89,7 @@ export function UserStatistics(user_id, pageup) {
   const { data, error } = useSWR(
     loading
       ? false
-      : "rabwa/UserStatistics?user_id=" + user_id + "&pageup=" + pageup,
+      : "api/UserStatistics?user_id=" + user_id + "&pageup=" + pageup,
     api.get
   );
   return {
@@ -102,7 +102,7 @@ export function UserStatistics(user_id, pageup) {
 export function GetApproveMandobes() {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/GetApproveMandobes",
+    loading ? false : "api/GetApproveMandobes",
     api.get
   );
   return {
@@ -115,7 +115,7 @@ export function GetApproveMandobes() {
 export function GetApproveuserssM() {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/GetApproveuserssM",
+    loading ? false : "api/GetApproveuserssM",
     api.get
   );
   return {
@@ -128,7 +128,7 @@ export function GetApproveuserssM() {
 export function GetApproveuserss() {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/GetApproveuserss",
+    loading ? false : "api/GetApproveuserss",
     api.get
   );
   return {
@@ -140,7 +140,7 @@ export function GetApproveuserss() {
 export function CompanysStatistics() {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/CompanysStatistics",
+    loading ? false : "api/CompanysStatistics",
     api.get
   );
   return {
@@ -153,7 +153,7 @@ export function CompanysStatistics() {
 export function getUserCards(user_id) {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/getUserCards?user_id=" + user_id,
+    loading ? false : "api/getUserCards?user_id=" + user_id,
     api.get
   );
   return {
@@ -175,7 +175,7 @@ export function GetMandobes(
   if (request == "firstTime") {
     const { loading } = useAuth();
     const { data, error } = useSWR(
-      loading ? false : "rabwa/GetMandobes",
+      loading ? false : "api/GetMandobes",
       api.get
     );
     return {
@@ -188,7 +188,7 @@ export function GetMandobes(
     const { data, error } = useSWR(
       loading
         ? false
-        : "rabwa/OrderGetMandobes?page=" +
+        : "api/OrderGetMandobes?page=" +
             page +
             "&name=" +
             name +
@@ -231,7 +231,7 @@ export function Getuserss2(
   if (request == "firstTime") {
     const { loading } = useAuth();
     const { data, error } = useSWR(
-      loading ? false : "rabwa/Getuserss2",
+      loading ? false : "api/Getuserss2",
       api.get
     );
     return {
@@ -244,7 +244,7 @@ export function Getuserss2(
     const { data, error } = useSWR(
       loading
         ? false
-        : "rabwa/OrderGetuserss2?page=" +
+        : "api/OrderGetuserss2?page=" +
             page +
             "&name=" +
             name +
@@ -304,7 +304,7 @@ export function GetMandobUsers(
   if (request == "firstTime") {
     const { loading } = useAuth();
     const { data, error } = useSWR(
-      loading ? false : "rabwa/GetMandobUsers?mandobe_id=" + mandobe_id,
+      loading ? false : "api/GetMandobUsers?mandobe_id=" + mandobe_id,
       api.get
     );
     return {
@@ -317,7 +317,7 @@ export function GetMandobUsers(
     const { data, error } = useSWR(
       loading
         ? false
-        : "rabwa/OrderGetMandobUsers?page=" +
+        : "api/OrderGetMandobUsers?page=" +
             page +
             "&name=" +
             name +
@@ -379,7 +379,7 @@ export function Getuserss(
   if (request == "firstTime") {
     const { loading } = useAuth();
     const { data, error } = useSWR(
-      loading ? false : "rabwa/Getuserss",
+      loading ? false : "api/Getuserss",
       api.get
     );
     return {
@@ -392,7 +392,7 @@ export function Getuserss(
     const { data, error } = useSWR(
       loading
         ? false
-        : "rabwa/OrderGetuserss?page=" +
+        : "api/OrderGetuserss?page=" +
             page +
             "&name=" +
             name +
@@ -438,7 +438,7 @@ export function GetCouponsByBracnhCat(Branchid, Categoryid) {
   const { data, error } = useSWR(
     loading
       ? false
-      : "rabwa/GetCouponsByBracnhCat?Branchid=" +
+      : "api/GetCouponsByBracnhCat?Branchid=" +
           Branchid +
           "&Categoryid=" +
           Categoryid,
@@ -454,7 +454,7 @@ export function GetCouponsByBracnhCat(Branchid, Categoryid) {
 export function GetCouponBranches(Section_id) {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/GetCouponBranches?Section_id=" + Section_id,
+    loading ? false : "api/GetCouponBranches?Section_id=" + Section_id,
     api.get
   );
   return {
@@ -466,7 +466,7 @@ export function GetCouponBranches(Section_id) {
 export function GetUserMeta(TheUser_id) {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/GetUserMeta?TheUser_id=" + TheUser_id,
+    loading ? false : "api/GetUserMeta?TheUser_id=" + TheUser_id,
     api.get
   );
   return {
@@ -479,7 +479,7 @@ export function GetUserMeta(TheUser_id) {
 export function GetCategories() {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/GetCategories",
+    loading ? false : "api/GetCategories",
     api.get
   );
   return {
@@ -492,7 +492,7 @@ export function GetCategories() {
 export function GetCompanys() {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/GetCompanys",
+    loading ? false : "api/GetCompanys",
     api.get
   );
   return {
@@ -505,7 +505,7 @@ export function GetCompanys() {
 export function GetCategorysByCity(city) {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/GetCategorysByCity?city=" + city,
+    loading ? false : "api/GetCategorysByCity?city=" + city,
     api.get
   );
   return {
@@ -518,7 +518,7 @@ export function GetCategorysByCity(city) {
 export function GetCouponsBySection(section_id) {
   const { loading } = useAuth();
   const { data, error } = useSWR(
-    loading ? false : "rabwa/GetCouponsBySection?section_id=" + section_id,
+    loading ? false : "api/GetCouponsBySection?section_id=" + section_id,
     api.get
   );
   return {
@@ -533,7 +533,7 @@ export function GetCouponsBybranch(Id, getType) {
   const { data, error } = useSWR(
     loading
       ? false
-      : "rabwa/GetCouponsBybranch?Id=" + Id + "&getType=" + getType,
+      : "api/GetCouponsBybranch?Id=" + Id + "&getType=" + getType,
 
     api.get
   );
@@ -546,7 +546,7 @@ export function GetCouponsBybranch(Id, getType) {
 
 export function GetCCAs() {
   const { loading } = useAuth();
-  const { data, error } = useSWR(loading ? false : "rabwa/GetCCAs", api.get);
+  const { data, error } = useSWR(loading ? false : "api/GetCCAs", api.get);
   return {
     data: data,
     isLoading: !error && !data,

@@ -32,7 +32,7 @@ function EditCategoryForm({
     setspinner(true);
 
     api
-      .post("rabwa/UpdateCategory", formdata)
+      .post("api/UpdateCategory", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

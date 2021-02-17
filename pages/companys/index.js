@@ -27,15 +27,15 @@ function companys() {
 
   /*function prefetch(name) {
     mutate(
-      "rabwa/getCompany?name=" + name,
-      api.get("rabwa/getCompany?name=" + name).then((res) => console.log(res))
+      "api/getCompany?name=" + name,
+      api.get("api/getCompany?name=" + name).then((res) => console.log(res))
     );
     // the second parameter is a Promise
     // SWR will use the result when it resolves
   }*/
 
   function GoBackAndTriggerMutation() {
-    mutate("rabwa/GetCompanys");
+    mutate("api/GetCompanys");
     setedit(false);
     setnewCompany(false);
     //setnewCompany(false);

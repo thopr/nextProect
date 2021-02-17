@@ -28,7 +28,7 @@ function Edit_aera({ GoBackAndTriggerMutation, Service }) {
     console.log(formdata);
 
     api
-      .post("rabwa/Edit_aera", formdata)
+      .post("api/Edit_aera", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

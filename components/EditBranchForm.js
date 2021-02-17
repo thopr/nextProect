@@ -36,7 +36,7 @@ function EditCompanyForm({
     setspinner(true);
 
     api
-      .post("rabwa/UpdateBranch", formdata)
+      .post("api/UpdateBranch", formdata)
       .then((res) => {
         console.log(res.data);
         setspinner(false);

@@ -298,7 +298,7 @@ function GiveNeedyCoubon() {
   function myDistributeCoupons(pool, months, month_active, list) {
     setspinner(true);
     api
-      .post("rabwa/DistributeCoupons", { pool, months, month_active, list })
+      .post("api/DistributeCoupons", { pool, months, month_active, list })
       .then((res) => {
         setspinner(false);
         console.log(res.data);
@@ -320,10 +320,10 @@ function GiveNeedyCoubon() {
           setpool([]);
           setpool_total(0);
           if (request == "firstTime") {
-            mutate("rabwa/Getuserss");
+            mutate("api/Getuserss");
           } else {
             mutate(
-              "rabwa/OrderGetuserss?page=" +
+              "api/OrderGetuserss?page=" +
                 page +
                 "&name=" +
                 name +

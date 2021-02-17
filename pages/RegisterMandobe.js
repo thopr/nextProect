@@ -122,7 +122,7 @@ function Table() {
     setspinner(true);
     if (checke) {
       api
-        .post("rabwa/CreatNewMandob", data)
+        .post("api/CreatNewMandob", data)
         .then((res) => {
           setspinner(false);
           console.log(res.data);
